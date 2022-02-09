@@ -40,7 +40,7 @@ const QRCodeScreen = (props) => {
           {[...Array(7)].map(el => {
             return (
               <>
-              <Typography {...text.body_semibold_14_14} mx='9px'>Azuki</Typography>
+              <Typography {...text.body_semibold_14_14} mx='9px'>{collection}</Typography>
               <Typography fontSize='5px'>{'\u2B24'}</Typography>
               </>
             )
@@ -51,14 +51,14 @@ const QRCodeScreen = (props) => {
             {...text.headline_semibold_24_24}
             color={colors.neutral_800}
           >
-            Azuki #1294
+            {name}
           </Typography>
           <Typography
             {...text.body_medium_14_14}
             color={colors.neutral_500}
             mt='12px'
           >
-            Token ID: 1294
+            Token ID: {tokenId}
           </Typography>
           <Typography
             {...text.body_medium_14_14}

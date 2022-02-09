@@ -19,7 +19,7 @@ const Ticket = (props) => {
       p='16px'
       display='flex'
       flexDirection='row'
-      mt='16px'
+      mt='8px'
       onPress={() => props.navigation.navigate('QRCodeScreen', {
         collection,
         name,

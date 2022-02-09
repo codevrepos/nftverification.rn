@@ -11,7 +11,7 @@ import { LogBox } from "react-native";
 import { createMaterialBottomTabNavigator } from "@react-navigation/material-bottom-tabs";
 import SplashScreen from "./Components/SplashScreen";
 import CryptoAuth from "./Components/CryptoAuth";
-import Header from "./Components/Header";
+import { Header } from "./Components/Header/Header";
 
 // import Assets from "./Components/Assets/Assets";
 // import RecentTransactions from "./Components/RecentTransactions/RecentTransactions";
