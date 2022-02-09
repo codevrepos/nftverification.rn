@@ -137,7 +137,10 @@ function App(): JSX.Element {
           name="DrawerNavigationRoutes"
           component={Home}
           // Hiding header for Navigation Drawer
-          options={{ headerTitle: (props) => <Header /> }}
+          options={{ 
+            headerTitle: (props) => <Header />,
+            headerShown: false
+           }}
           // options={({ route }) => ({
           //   headerTitle: getHeaderTitle(route),
           // })}

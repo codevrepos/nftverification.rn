@@ -3,6 +3,7 @@ import { Box } from '../Box/Box';
 import { Typography } from '../Typography/Typography';
 import colors from '../theme/colors';
 import text from '../theme/text';
+import QRCode from 'react-native-qrcode-svg';
 
 const QRCodeScreen = (props) => {
   const { collection, name, tokenId, imageUrl } = props.route.params;
@@ -24,14 +25,18 @@ const QRCodeScreen = (props) => {
         >
           QR-Code is valid for 1 minute
         </Typography>
-        <Box mt='24px' mx='24px'>
-          <Typography color={colors.neutral_800}>
-            QR Code here
-          </Typography>
+        <Box ml='auto' mr='auto' top='24px' borderRadius='8px' overflow='hidden'>
+          <QRCode
+            value="Just some string value"
+            size={220}
+            logo={imageUrl}
+            logoSize={60}
+            logoBorderRadius={8}
+          />
         </Box>
         {/* TODO: overflow='hidden' once animation is complete */}
         {/* TODO: Add background SVG image https://stackoverflow.com/questions/32027965/does-react-native-styles-support-gradients */}
-        <Box mt='15px' height='35px' width='100%' border={1} display="flex" flexDirection="row" alignItems='center'>
+        <Box mt='45px' height='35px' width='100%' border={1} display="flex" flexDirection="row" alignItems='center'>
           {[...Array(7)].map(el => {
             return (
               <>
