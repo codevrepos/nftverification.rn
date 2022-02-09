@@ -9,7 +9,7 @@ const QRCodeScreen = (props) => {
   const { collection, name, tokenId, imageUrl } = props.route.params;
   // TODO: Change with real wallet address data
   const wallet = '0xf4a726c2dea3860b6fce8e9fa85d7c508441c150';
-  const walletTruncated = `${wallet.substring(0, 4)}...${wallet.substring(wallet.length - 4, wallet.length)}`;
+  const walletTruncated = `${wallet.substring(0, 6)}...${wallet.substring(wallet.length - 4, wallet.length)}`;
 
   return (
     <Box>
