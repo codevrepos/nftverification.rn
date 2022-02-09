@@ -11,12 +11,17 @@ import { LogBox } from "react-native";
 import { createMaterialBottomTabNavigator } from "@react-navigation/material-bottom-tabs";
 import SplashScreen from "./Components/SplashScreen";
 import CryptoAuth from "./Components/CryptoAuth";
-import RecentTransactions from "./Components/RecentTransactions/RecentTransactions";
-import Assets from "./Components/Assets/Assets";
-import Transfer from "./Components/Transfer/Transfer";
-import Profile from "./Components/Profile/Profile";
 import Header from "./Components/Header";
-import NFTAssets from "./Components/NFT/NFTAssets";
+
+// import Assets from "./Components/Assets/Assets";
+// import RecentTransactions from "./Components/RecentTransactions/RecentTransactions";
+// import NFTAssets from "./Components/NFT/NFTAssets";
+// import Transfer from "./Components/Transfer/Transfer";
+// import Profile from "./Components/Profile/Profile";
+
+import Tickets from './Components/Tickets';
+import Camera from './Components/Camera';
+import Settings from './Components/Settings';
 
 import { FontAwesomeIcon } from "@fortawesome/react-native-fontawesome";
 import {
@@ -40,55 +45,34 @@ function Home(): JSX.Element {
       // inactiveColor="#3e2465"
       barStyle={{ backgroundColor: "white" }}>
       <Tab.Screen
-        name="Assets"
+        name="Tickets"
         options={{
-          tabBarLabel: "Assets",
+          tabBarLabel: "Tickets",
           tabBarIcon: ({ color, focused }) => {
             return <FontAwesomeIcon icon={faCoins} color={color} size={20} />;
           },
         }}
-        component={Assets}
+        component={Tickets}
       />
       <Tab.Screen
-        name="Transactions"
+        name="Camera"
         options={{
-          tabBarLabel: "Transactions",
+          tabBarLabel: "Camera",
           tabBarIcon: ({ color }) => (
             <FontAwesomeIcon icon={faCreditCard} color={color} size={20} />
           ),
         }}
-        component={RecentTransactions}
+        component={Camera}
       />
       <Tab.Screen
-        name="NFTAssets"
+        name="Settings"
         options={{
-          tabBarLabel: "NFTAssets",
+          tabBarLabel: "Settings",
           tabBarIcon: ({ color, focused }) => {
             return <FontAwesomeIcon icon={faRocket} color={color} size={20} />;
           },
         }}
-        component={NFTAssets}
-      />
-      <Tab.Screen
-        name="Transfer"
-        options={{
-          tabBarLabel: "Transfer",
-          tabBarIcon: ({ color }) => (
-            <FontAwesomeIcon icon={faPaperPlane} color={color} size={20} />
-          ),
-        }}
-        component={Transfer}
-      />
-
-      <Tab.Screen
-        name="Profile"
-        options={{
-          tabBarLabel: "Profile",
-          tabBarIcon: ({ color }) => (
-            <FontAwesomeIcon icon={faUser} color={color} size={20} />
-          ),
-        }}
-        component={Profile}
+        component={Settings}
       />
     </Tab.Navigator>
   );
@@ -103,14 +87,20 @@ function getHeaderTitle(route) {
   const routeName = getFocusedRouteNameFromRoute(route) ?? "Feed";
 
   switch (routeName) {
-    case "Assets":
-      return "Assets";
-    case "Transfer":
-      return "Transfer";
-    case "Transactions":
-      return "Transactions";
-    case "Profile":
-      return "Profile";
+    // case "Assets":
+    //   return "Assets";
+    // case "Transfer":
+    //   return "Transfer";
+    // case "Transactions":
+    //   return "Transactions";
+    // case "Profile":
+    //   return "Profile";
+    case "Tickets":
+      return "Tickets";
+    case "Camera":
+      return "Camera";
+    case "Settings":
+      return "Settings";
   }
 }
 
