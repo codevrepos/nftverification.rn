@@ -76,9 +76,13 @@ const LoginScreen = ({ navigation }) => {
       .catch(() => {});
   };
 
+  // useEffect(() => {
+  //   isAuthenticated && navigation.replace("DrawerNavigationRoutes");
+  // }, [isAuthenticated]);
+
   useEffect(() => {
-    isAuthenticated && navigation.replace("DrawerNavigationRoutes");
-  }, [isAuthenticated]);
+    true && navigation.replace("DrawerNavigationRoutes");
+  }, []);
 
   return (
     <Provider>
