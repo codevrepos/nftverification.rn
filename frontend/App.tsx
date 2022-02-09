@@ -19,7 +19,7 @@ import Header from "./Components/Header";
 // import Transfer from "./Components/Transfer/Transfer";
 // import Profile from "./Components/Profile/Profile";
 
-import Tickets from './Components/Tickets/Tickets';
+import TicketsStackNavigator from './Components/Tickets/TicketsStackNavigator';
 import Camera from './Components/Camera/Camera';
 import Settings from './Components/Settings/Settings';
 
@@ -52,7 +52,7 @@ function Home(): JSX.Element {
             return <FontAwesomeIcon icon={faCoins} color={color} size={20} />;
           },
         }}
-        component={Tickets}
+        component={TicketsStackNavigator}
       />
       <Tab.Screen
         name="Camera"
@@ -118,9 +118,6 @@ function App(): JSX.Element {
   return (
     <NavigationContainer>
       <Stack.Navigator initialRouteName="SplashScreen"
-        // screenOptions={{
-        //   headerShown: true
-        // }}
         >
         {/* SplashScreen which will come once for 5 Seconds */}
         <Stack.Screen

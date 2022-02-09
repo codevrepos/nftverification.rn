@@ -7,6 +7,7 @@ import { Typography } from '../Typography/Typography';
 
 const Ticket = (props) => {
   const { collection, name, tokenId } = props;
+
   return (
     <Box
       as={TouchableOpacity}
@@ -18,7 +19,12 @@ const Ticket = (props) => {
       p='16px'
       display='flex'
       flexDirection='row'
-      mb='16px'
+      mt='16px'
+      onPress={() => props.navigation.navigate('QRCodeScreen', {
+        collection,
+        name,
+        tokenId
+      })}
     >
       <Box
         height='76px'
@@ -32,7 +38,7 @@ const Ticket = (props) => {
           resizeMode="cover"
         />
       </Box>
-      <Box ml='16px'>
+      <Box ml='16px' mt='10px'>
         <Box>
           <Typography {...text.body_semibold_14_14}>{collection}</Typography>
         </Box>

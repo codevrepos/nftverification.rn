@@ -4,8 +4,18 @@ import { Box } from '../Box/Box';
 import colors from '../theme/colors';
 import Ticket from './Ticket';
 
-const Tickets = () => {
-  const renderItem = ({ item, index }) => <Ticket key={index} collection={item.collection} name={item.name} tokenId={item.tokenId} />;
+const TicketsScreen = (props) => {
+  const renderItem = ({ item, index }) => {
+    return (
+      <Ticket
+        key={index}
+        collection={item.collection}
+        name={item.name}
+        tokenId={item.tokenId}
+        {...props}
+      />
+    )
+  }
 
   // TODO: replace with API data
   const data = [
@@ -25,4 +35,4 @@ const Tickets = () => {
   )
 }
 
-export default Tickets;
+export default TicketsScreen;
