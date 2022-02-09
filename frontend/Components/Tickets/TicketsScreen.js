@@ -12,6 +12,7 @@ const TicketsScreen = (props) => {
         collection={item.collection}
         name={item.name}
         tokenId={item.tokenId}
+        imageUrl={item.imageUrl}
         {...props}
       />
     )
@@ -19,9 +20,9 @@ const TicketsScreen = (props) => {
 
   // TODO: replace with API data
   const data = [
-    {collection: "Bored Ape Yacht Club", name: "#1", tokenId: 1},
-    {collection: "Bored Ape Yacht Club", name: "#2", tokenId: 2},
-    {collection: "Bored Ape Yacht Club", name: "#3", tokenId: 3}
+    {imageUrl: 'https://www.penthousepantherclub.com/fur_paisley_small.png', collection: "Bored Ape Yacht Club", name: "#1", tokenId: 1},
+    {imageUrl: 'https://www.penthousepantherclub.com/fur_paisley_small.png', collection: "Bored Ape Yacht Club", name: "#2", tokenId: 2},
+    {imageUrl: 'https://www.penthousepantherclub.com/fur_paisley_small.png', collection: "Bored Ape Yacht Club", name: "#3", tokenId: 3}
   ];
 
   return (

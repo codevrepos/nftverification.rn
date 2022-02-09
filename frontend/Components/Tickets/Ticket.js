@@ -6,7 +6,7 @@ import text from '../theme/text.js';
 import { Typography } from '../Typography/Typography';
 
 const Ticket = (props) => {
-  const { collection, name, tokenId } = props;
+  const { collection, name, tokenId, imageUrl } = props;
 
   return (
     <Box
@@ -23,7 +23,8 @@ const Ticket = (props) => {
       onPress={() => props.navigation.navigate('QRCodeScreen', {
         collection,
         name,
-        tokenId
+        tokenId,
+        imageUrl
       })}
     >
       <Box
@@ -34,7 +35,7 @@ const Ticket = (props) => {
       >
         <Image
           style={{ width: '100%', height: '100%'}}
-          source={{ uri: 'https://www.penthousepantherclub.com/fur_paisley_small.png'}}
+          source={{ uri: imageUrl }}
           resizeMode="cover"
         />
       </Box>
