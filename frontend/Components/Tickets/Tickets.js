@@ -1,13 +1,17 @@
 import React from 'react';
 import { SafeAreaView, Text, View } from 'react-native';
-import tw from 'twrnc';
 import { Box } from '../Box/Box';
+import colors from '../theme/colors';
+import text from '../theme/text.js';
+import { Typography } from '../Typography/Typography';
 
 const Tickets = () => {
   return (
     <SafeAreaView>
       <Box
         border={1}
+        borderColor={colors.neutral_200}
+        borderRadius='8px'
         mx='16px'
         p='16px'
         display='flex'
@@ -21,13 +25,13 @@ const Tickets = () => {
         />
         <Box border={1} ml='16px'>
           <Box>
-            <Text>Bored Ape Yacht Club</Text>
+            <Typography {...text.body_semibold_14_14}>Bored Ape Yacht Club</Typography>
           </Box>
           <Box>
-            <Text>#8179</Text>
+            <Typography {...text.body_semibold_14_14}>#8179</Typography>
           </Box>
           <Box>
-            <Text>Token ID: 4671</Text>
+            <Typography {...text.caption_medium_12_12}>Token ID: 4671</Typography>
           </Box>
         </Box>
       </Box>
