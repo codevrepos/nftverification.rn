@@ -19,9 +19,9 @@ import Header from "./Components/Header";
 // import Transfer from "./Components/Transfer/Transfer";
 // import Profile from "./Components/Profile/Profile";
 
-import Tickets from './Components/Tickets';
-import Camera from './Components/Camera';
-import Settings from './Components/Settings';
+import Tickets from './Components/Tickets/Tickets';
+import Camera from './Components/Camera/Camera';
+import Settings from './Components/Settings/Settings';
 
 import { FontAwesomeIcon } from "@fortawesome/react-native-fontawesome";
 import {
