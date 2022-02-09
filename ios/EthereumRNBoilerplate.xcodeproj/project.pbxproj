@@ -11,9 +11,18 @@
 		13B07FBC1A68108700A75B9A /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB01A68108700A75B9A /* AppDelegate.m */; };
 		13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 13B07FB51A68108700A75B9A /* Images.xcassets */; };
 		13B07FC11A68108700A75B9A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB71A68108700A75B9A /* main.m */; };
+		3B45A6B0BD184BAA805DEA89 /* Inter-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = D53B1B90797A4D5F8242E3B7 /* Inter-Bold.ttf */; };
+		52BD309606574D179D911B77 /* Inter-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 95E46375631B42B9B7964E8A /* Inter-Regular.ttf */; };
+		53D97AA1483D4F96BBCFCCB0 /* Inter-Thin.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 37051DB84E1745198ACB5B2B /* Inter-Thin.ttf */; };
+		5ECC687AC3EC4A0DB1A2E4EF /* Inter-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = A2EAEC1B74434E94B1DFA97B /* Inter-Light.ttf */; };
 		6A91A96760F5B7E360595E48 /* libPods-EthereumRNBoilerplate.a in Frameworks */ = {isa = PBXBuildFile; fileRef = B74D317E2C90BE4542FA5EAE /* libPods-EthereumRNBoilerplate.a */; };
+		6C96C927C39E499AAB6196F9 /* Inter-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 08DDFCE4F4EA402A89A88E8D /* Inter-SemiBold.ttf */; };
 		72847CAE278740B400F38005 /* liblottie-ios.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 728614642784B9DB0082878F /* liblottie-ios.a */; };
+		7D36AF3FF9A44F65B5206B5A /* Inter-ExtraLight.ttf in Resources */ = {isa = PBXBuildFile; fileRef = BE988A06F511404DBE004CC6 /* Inter-ExtraLight.ttf */; };
 		81AB9BB82411601600AC10FF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */; };
+		914753066517495C8C75CF28 /* Inter-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = A164D16126CB464A92D9C2CE /* Inter-Medium.ttf */; };
+		A4EFEAF5284B43C08F73AA3E /* Inter-Black.ttf in Resources */ = {isa = PBXBuildFile; fileRef = BBD302F02705406FBD258CA8 /* Inter-Black.ttf */; };
+		CFC50474AB3346779F91D654 /* Inter-ExtraBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 2EC58C74EC4044FB8FFC271A /* Inter-ExtraBold.ttf */; };
 		F4D62D86A4D5056D3485F939 /* libPods-EthereumRNBoilerplate-EthereumRNBoilerplateTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = AC5926C1D11799DF1BE43876 /* libPods-EthereumRNBoilerplate-EthereumRNBoilerplateTests.a */; };
 /* End PBXBuildFile section */
 
@@ -31,6 +40,7 @@
 		00E356EE1AD99517003FC87E /* EthereumRNBoilerplateTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = EthereumRNBoilerplateTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		00E356F11AD99517003FC87E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		00E356F21AD99517003FC87E /* EthereumRNBoilerplateTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EthereumRNBoilerplateTests.m; sourceTree = "<group>"; };
+		08DDFCE4F4EA402A89A88E8D /* Inter-SemiBold.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "Inter-SemiBold.ttf"; path = "../assets/fonts/Inter-SemiBold.ttf"; sourceTree = "<group>"; };
 		13B07F961A680F5B00A75B9A /* EthereumRNBoilerplate.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = EthereumRNBoilerplate.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		13B07FAF1A68108700A75B9A /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AppDelegate.h; path = EthereumRNBoilerplate/AppDelegate.h; sourceTree = "<group>"; };
 		13B07FB01A68108700A75B9A /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AppDelegate.m; path = EthereumRNBoilerplate/AppDelegate.m; sourceTree = "<group>"; };
@@ -41,6 +51,8 @@
 		20CC9D091EA74FA0966E2842 /* MaterialIcons.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = MaterialIcons.ttf; path = "../node_modules/react-native-vector-icons/Fonts/MaterialIcons.ttf"; sourceTree = "<group>"; };
 		222C9DA743BF4238A69C8FDD /* Fontisto.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = Fontisto.ttf; path = "../node_modules/react-native-vector-icons/Fonts/Fontisto.ttf"; sourceTree = "<group>"; };
 		22E1A161DC384E598D114D21 /* FontAwesome5_Regular.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = FontAwesome5_Regular.ttf; path = "../node_modules/react-native-vector-icons/Fonts/FontAwesome5_Regular.ttf"; sourceTree = "<group>"; };
+		2EC58C74EC4044FB8FFC271A /* Inter-ExtraBold.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "Inter-ExtraBold.ttf"; path = "../assets/fonts/Inter-ExtraBold.ttf"; sourceTree = "<group>"; };
+		37051DB84E1745198ACB5B2B /* Inter-Thin.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "Inter-Thin.ttf"; path = "../assets/fonts/Inter-Thin.ttf"; sourceTree = "<group>"; };
 		3F086896701E44CC9103306C /* Zocial.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = Zocial.ttf; path = "../node_modules/react-native-vector-icons/Fonts/Zocial.ttf"; sourceTree = "<group>"; };
 		420C98B98D954122A2FA07F3 /* AntDesign.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = AntDesign.ttf; path = "../node_modules/react-native-vector-icons/Fonts/AntDesign.ttf"; sourceTree = "<group>"; };
 		57F1702408B248FBA9D2A7F6 /* FontAwesome5_Brands.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = FontAwesome5_Brands.ttf; path = "../node_modules/react-native-vector-icons/Fonts/FontAwesome5_Brands.ttf"; sourceTree = "<group>"; };
@@ -53,14 +65,20 @@
 		774913FF2DD84293A96CBF46 /* Feather.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = Feather.ttf; path = "../node_modules/react-native-vector-icons/Fonts/Feather.ttf"; sourceTree = "<group>"; };
 		81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = LaunchScreen.storyboard; path = EthereumRNBoilerplate/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		93FC0F27FD2945F789E0457A /* EvilIcons.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = EvilIcons.ttf; path = "../node_modules/react-native-vector-icons/Fonts/EvilIcons.ttf"; sourceTree = "<group>"; };
+		95E46375631B42B9B7964E8A /* Inter-Regular.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "Inter-Regular.ttf"; path = "../assets/fonts/Inter-Regular.ttf"; sourceTree = "<group>"; };
 		9A643DD56DD04F04BF3437F6 /* Ionicons.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = Ionicons.ttf; path = "../node_modules/react-native-vector-icons/Fonts/Ionicons.ttf"; sourceTree = "<group>"; };
+		A164D16126CB464A92D9C2CE /* Inter-Medium.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "Inter-Medium.ttf"; path = "../assets/fonts/Inter-Medium.ttf"; sourceTree = "<group>"; };
+		A2EAEC1B74434E94B1DFA97B /* Inter-Light.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "Inter-Light.ttf"; path = "../assets/fonts/Inter-Light.ttf"; sourceTree = "<group>"; };
 		AC5926C1D11799DF1BE43876 /* libPods-EthereumRNBoilerplate-EthereumRNBoilerplateTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-EthereumRNBoilerplate-EthereumRNBoilerplateTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		AF4CA7F2DF9646C78F2FEA26 /* Entypo.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = Entypo.ttf; path = "../node_modules/react-native-vector-icons/Fonts/Entypo.ttf"; sourceTree = "<group>"; };
 		B74D317E2C90BE4542FA5EAE /* libPods-EthereumRNBoilerplate.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-EthereumRNBoilerplate.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		BAF3B91DBE6A41F79CA13F1F /* FontAwesome.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = FontAwesome.ttf; path = "../node_modules/react-native-vector-icons/Fonts/FontAwesome.ttf"; sourceTree = "<group>"; };
+		BBD302F02705406FBD258CA8 /* Inter-Black.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "Inter-Black.ttf"; path = "../assets/fonts/Inter-Black.ttf"; sourceTree = "<group>"; };
+		BE988A06F511404DBE004CC6 /* Inter-ExtraLight.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "Inter-ExtraLight.ttf"; path = "../assets/fonts/Inter-ExtraLight.ttf"; sourceTree = "<group>"; };
 		C0EDE95885F54BD88F75A4F4 /* FontAwesome5_Solid.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = FontAwesome5_Solid.ttf; path = "../node_modules/react-native-vector-icons/Fonts/FontAwesome5_Solid.ttf"; sourceTree = "<group>"; };
 		C43BEFC634144A55555CE01C /* Pods-EthereumRNBoilerplate.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EthereumRNBoilerplate.debug.xcconfig"; path = "Target Support Files/Pods-EthereumRNBoilerplate/Pods-EthereumRNBoilerplate.debug.xcconfig"; sourceTree = "<group>"; };
 		C970C656394886134789135A /* Pods-EthereumRNBoilerplate-EthereumRNBoilerplateTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EthereumRNBoilerplate-EthereumRNBoilerplateTests.release.xcconfig"; path = "Target Support Files/Pods-EthereumRNBoilerplate-EthereumRNBoilerplateTests/Pods-EthereumRNBoilerplate-EthereumRNBoilerplateTests.release.xcconfig"; sourceTree = "<group>"; };
+		D53B1B90797A4D5F8242E3B7 /* Inter-Bold.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "Inter-Bold.ttf"; path = "../assets/fonts/Inter-Bold.ttf"; sourceTree = "<group>"; };
 		D5847EFF7969A7CDDA693B0B /* Pods-EthereumRNBoilerplate-EthereumRNBoilerplateTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EthereumRNBoilerplate-EthereumRNBoilerplateTests.debug.xcconfig"; path = "Target Support Files/Pods-EthereumRNBoilerplate-EthereumRNBoilerplateTests/Pods-EthereumRNBoilerplate-EthereumRNBoilerplateTests.debug.xcconfig"; sourceTree = "<group>"; };
 		D7C8FC8B3E4B48FD991B78EB /* Octicons.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = Octicons.ttf; path = "../node_modules/react-native-vector-icons/Fonts/Octicons.ttf"; sourceTree = "<group>"; };
 		D85C915BE4D24928B148B6F4 /* Foundation.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = Foundation.ttf; path = "../node_modules/react-native-vector-icons/Fonts/Foundation.ttf"; sourceTree = "<group>"; };
@@ -196,6 +214,15 @@
 				D7C8FC8B3E4B48FD991B78EB /* Octicons.ttf */,
 				FAB93B2017304EB9A3B012FE /* SimpleLineIcons.ttf */,
 				3F086896701E44CC9103306C /* Zocial.ttf */,
+				BBD302F02705406FBD258CA8 /* Inter-Black.ttf */,
+				D53B1B90797A4D5F8242E3B7 /* Inter-Bold.ttf */,
+				2EC58C74EC4044FB8FFC271A /* Inter-ExtraBold.ttf */,
+				BE988A06F511404DBE004CC6 /* Inter-ExtraLight.ttf */,
+				A2EAEC1B74434E94B1DFA97B /* Inter-Light.ttf */,
+				A164D16126CB464A92D9C2CE /* Inter-Medium.ttf */,
+				95E46375631B42B9B7964E8A /* Inter-Regular.ttf */,
+				08DDFCE4F4EA402A89A88E8D /* Inter-SemiBold.ttf */,
+				37051DB84E1745198ACB5B2B /* Inter-Thin.ttf */,
 			);
 			name = Resources;
 			sourceTree = "<group>";
@@ -294,6 +321,15 @@
 			files = (
 				81AB9BB82411601600AC10FF /* LaunchScreen.storyboard in Resources */,
 				13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */,
+				A4EFEAF5284B43C08F73AA3E /* Inter-Black.ttf in Resources */,
+				3B45A6B0BD184BAA805DEA89 /* Inter-Bold.ttf in Resources */,
+				CFC50474AB3346779F91D654 /* Inter-ExtraBold.ttf in Resources */,
+				7D36AF3FF9A44F65B5206B5A /* Inter-ExtraLight.ttf in Resources */,
+				5ECC687AC3EC4A0DB1A2E4EF /* Inter-Light.ttf in Resources */,
+				914753066517495C8C75CF28 /* Inter-Medium.ttf in Resources */,
+				52BD309606574D179D911B77 /* Inter-Regular.ttf in Resources */,
+				6C96C927C39E499AAB6196F9 /* Inter-SemiBold.ttf in Resources */,
+				53D97AA1483D4F96BBCFCCB0 /* Inter-Thin.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
