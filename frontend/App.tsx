@@ -118,9 +118,10 @@ function App(): JSX.Element {
   return (
     <NavigationContainer>
       <Stack.Navigator initialRouteName="SplashScreen"
-        screenOptions={{
-          headerShown: false
-        }}>
+        // screenOptions={{
+        //   headerShown: true
+        // }}
+        >
         {/* SplashScreen which will come once for 5 Seconds */}
         <Stack.Screen
           name="SplashScreen"
@@ -139,7 +140,7 @@ function App(): JSX.Element {
           name="DrawerNavigationRoutes"
           component={Home}
           // Hiding header for Navigation Drawer
-          // options={{ headerTitle: (props) => <Header /> }}
+          options={{ headerTitle: (props) => <Header /> }}
           // options={({ route }) => ({
           //   headerTitle: getHeaderTitle(route),
           // })}

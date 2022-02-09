@@ -1,20 +1,16 @@
 import React from 'react';
-import {View, StyleSheet} from 'react-native';
-
-import Address from './Address';
+import { Box } from './Box/Box';
+import { Typography } from './Typography/Typography';
 
 export default function Header() {
+  // TODO: Finish header
   return (
-    <View style={styles.viewContainer}>
-      <Address />
-    </View>
+    <Box flex={1} flexDirection={'row'} justifyContent={'center'} alignItems={'center'}>
+      <Box>
+        <Typography>
+            Logo Pass
+        </Typography>
+      </Box>
+    </Box>
   );
 }
-const styles = StyleSheet.create({
-  viewContainer: {
-    flex: 1,
-    flexDirection: 'row',
-    justifyContent: 'center',
-    alignItems: 'center',
-  },
-});
