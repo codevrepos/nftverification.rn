@@ -4,7 +4,7 @@ import TicketsScreen from './TicketsScreen';
 import QRCodeScreen from './QRCodeScreen';
 import { Header, HeaderLeft, HeaderRight } from '../Header/Header';
 import LeftChevron from '../Header/LeftChevron';
-import colors from '../theme/colors';
+import colors from '../../theme/colors';
 import { Alert } from 'react-native';
 
 const Stack = createStackNavigator();

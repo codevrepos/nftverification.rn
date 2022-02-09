@@ -13,12 +13,6 @@ import SplashScreen from "./Components/SplashScreen";
 import CryptoAuth from "./Components/CryptoAuth";
 import { Header } from "./Components/Header/Header";
 
-// import Assets from "./Components/Assets/Assets";
-// import RecentTransactions from "./Components/RecentTransactions/RecentTransactions";
-// import NFTAssets from "./Components/NFT/NFTAssets";
-// import Transfer from "./Components/Transfer/Transfer";
-// import Profile from "./Components/Profile/Profile";
-
 import TicketsStackNavigator from './Components/Tickets/TicketsStackNavigator';
 import Camera from './Components/Camera/Camera';
 import Settings from './Components/Settings/Settings';
@@ -30,17 +24,13 @@ import {
   faEdit,
 } from "@fortawesome/free-solid-svg-icons";
 
-import Moralis from "moralis/types";
-
 LogBox.ignoreAllLogs();
 
-// const Activecolor =
 function Home(): JSX.Element {
   return (
     <Tab.Navigator
       shifting={false}
       activeColor="#315399"
-      // inactiveColor="#3e2465"
       barStyle={{ backgroundColor: "white" }}>
       <Tab.Screen
         name="Tickets"
@@ -85,14 +75,6 @@ function getHeaderTitle(route) {
   const routeName = getFocusedRouteNameFromRoute(route) ?? "Feed";
 
   switch (routeName) {
-    // case "Assets":
-    //   return "Assets";
-    // case "Transfer":
-    //   return "Transfer";
-    // case "Transactions":
-    //   return "Transactions";
-    // case "Profile":
-    //   return "Profile";
     case "Tickets":
       return "Tickets";
     case "Camera":
@@ -117,31 +99,23 @@ function App(): JSX.Element {
     <NavigationContainer>
       <Stack.Navigator initialRouteName="SplashScreen"
         >
-        {/* SplashScreen which will come once for 5 Seconds */}
         <Stack.Screen
           name="SplashScreen"
           component={SplashScreen}
-          // Hiding header for Splash Screen
           options={{ headerShown: false }}
         />
-        {/* Auth Navigator: Include Login and Signup */}
         <Stack.Screen
           name="Auth"
           component={CryptoAuth}
           options={{ headerShown: false }}
         />
-        {/* Navigation Drawer as a landing page */}
         <Stack.Screen
           name="DrawerNavigationRoutes"
           component={Home}
-          // Hiding header for Navigation Drawer
           options={{ 
             headerTitle: (props) => <Header />,
             headerShown: false
            }}
-          // options={({ route }) => ({
-          //   headerTitle: getHeaderTitle(route),
-          // })}
         />
       </Stack.Navigator>
     </NavigationContainer>

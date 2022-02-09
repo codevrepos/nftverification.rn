@@ -1,8 +1,8 @@
 import React from 'react';
 import { Box } from '../Box/Box';
 import { Typography } from '../Typography/Typography';
-import colors from '../theme/colors';
-import text from '../theme/text';
+import colors from '../../theme/colors';
+import text from '../../theme/text';
 import QRCode from 'react-native-qrcode-svg';
 
 const QRCodeScreen = (props) => {
