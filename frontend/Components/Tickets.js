@@ -1,9 +1,12 @@
 import React from 'react';
-import { Text } from 'react-native';
+import { SafeAreaView, Text } from 'react-native';
+import tw from 'twrnc';
 
 const Tickets = () => {
   return (
-    <Text>Tickets</Text>
+    <SafeAreaView>
+      <Text style={tw`text-xl`}>Hello World</Text>
+    </SafeAreaView>
   )
 }
 
