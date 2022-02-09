@@ -26,7 +26,7 @@ const TicketsScreen = (props) => {
   ];
 
   return (
-    <Box as={SafeAreaView} backgroundColor={colors.neutral_50} height='100%'>
+    <Box as={SafeAreaView} backgroundColor={colors.neutral_50} pt='10px' height='100%'>
       <FlatList
         data={data}
         renderItem={renderItem}

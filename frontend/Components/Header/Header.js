@@ -1,6 +1,9 @@
 import React from 'react';
 import { Box } from '../Box/Box';
 import { Typography } from '../Typography/Typography';
+import Search from './Search';
+import Sort from './Sort';
+import { TouchableOpacity } from 'react-native';
 
 const Header = () => {
   // TODO: Finish header
@@ -15,22 +18,22 @@ const Header = () => {
   );
 };
 
-const HeaderLeft = () => {
+const HeaderLeft = (props) => {
+  const { onPress } = props;
+
   return (
-    <Box ml='20px'>
-      <Typography>
-          Search
-      </Typography>
+    <Box as={TouchableOpacity} ml='10px' p='5px' onPress={() => onPress()}>
+      <Search />
     </Box>
   )
 }
 
-const HeaderRight = () => {
+const HeaderRight = (props) => {
+  const { onPress } = props;
+
   return (
-    <Box mr='20px'>
-      <Typography>
-          Sort
-      </Typography>
+    <Box as={TouchableOpacity} mr='10px' p='5px' onPress={() => onPress()}>
+      <Sort />
     </Box>
   )
 }

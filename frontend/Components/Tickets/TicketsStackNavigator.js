@@ -3,28 +3,29 @@ import { createStackNavigator } from "@react-navigation/stack";
 import TicketsScreen from './TicketsScreen';
 import QRCodeScreen from './QRCodeScreen';
 import { Header, HeaderLeft, HeaderRight } from '../Header/Header';
-import { FontAwesomeIcon } from "@fortawesome/react-native-fontawesome";
-import {
-  faCreditCard,
-  faCoins,
-  faUser,
-  faPaperPlane,
-  faRocket,
-} from "@fortawesome/free-solid-svg-icons";
 import LeftChevron from '../Header/LeftChevron';
+import colors from '../theme/colors';
+import { Alert } from 'react-native';
 
 const Stack = createStackNavigator();
 
 const TicketsStackNavigator = (props) => {
   return (
-    <Stack.Navigator>
+    <Stack.Navigator
+      screenOptions={{
+        headerStyle: {
+          backgroundColor: colors.neutral_50,
+          shadowColor: 'transparent'
+        }
+      }}
+    >
       <Stack.Screen
         name="TicketsScreen"
         component={TicketsScreen}
         options={({ route }) => ({
-          headerLeft: () => <HeaderLeft />,
+          headerLeft: () => <HeaderLeft onPress={() => Alert.alert('Search')} />,
           title: <Header />,
-          headerRight: () => <HeaderRight />
+          headerRight: () => <HeaderRight onPress={() => Alert.alert('Sort')} />
         })}
 
       />
@@ -34,7 +35,7 @@ const TicketsStackNavigator = (props) => {
         options={({ route }) => ({
           title: `Details #${route.params.tokenId}`,
           // TODO: use headerBackImageSource to get the back icon
-          headerLeft: () => <LeftChevron />
+          headerLeft: () => <LeftChevron onPress={() => props.navigation.goBack()} />
         })}
       />
     </Stack.Navigator>

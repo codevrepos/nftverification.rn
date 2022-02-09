@@ -12,11 +12,11 @@ const QRCodeScreen = (props) => {
   const walletTruncated = `${wallet.substring(0, 6)}...${wallet.substring(wallet.length - 4, wallet.length)}`;
 
   return (
-    <Box>
+    <Box height=' 100%' backgroundColor={colors.neutral_50}>
       {/* <Typography>
         {collection}, {name}, {tokenId}
       </Typography> */}
-      <Box mt='20px' mx='36px' backgroundColor={'white'} borderRadius='8px'>
+      <Box mt='20px' mx='36px' backgroundColor='white' borderRadius='8px'>
         <Typography
           mt='24px'
           textAlign='center'
@@ -36,7 +36,7 @@ const QRCodeScreen = (props) => {
         </Box>
         {/* TODO: overflow='hidden' once animation is complete */}
         {/* TODO: Add background SVG image https://stackoverflow.com/questions/32027965/does-react-native-styles-support-gradients */}
-        <Box mt='45px' height='35px' width='100%' border={1} display="flex" flexDirection="row" alignItems='center'>
+        <Box mt='45px' height='35px' width='100%' border='1px' display="flex" flexDirection="row" alignItems='center'>
           {[...Array(7)].map(el => {
             return (
               <>

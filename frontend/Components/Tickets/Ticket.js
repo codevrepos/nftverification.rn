@@ -11,8 +11,8 @@ const Ticket = (props) => {
   return (
     <Box
       as={TouchableOpacity}
-      backgroundColor={'white'}
-      border={1}
+      backgroundColor='white'
+      border='1px'
       borderColor={colors.neutral_200}
       borderRadius='8px'
       mx='16px'

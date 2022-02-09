@@ -25,11 +25,9 @@ import Settings from './Components/Settings/Settings';
 
 import { FontAwesomeIcon } from "@fortawesome/react-native-fontawesome";
 import {
-  faCreditCard,
-  faCoins,
-  faUser,
-  faPaperPlane,
-  faRocket,
+  faQrcode,
+  faTicketAlt,
+  faEdit,
 } from "@fortawesome/free-solid-svg-icons";
 
 import Moralis from "moralis/types";
@@ -49,17 +47,17 @@ function Home(): JSX.Element {
         options={{
           tabBarLabel: "Tickets",
           tabBarIcon: ({ color, focused }) => {
-            return <FontAwesomeIcon icon={faCoins} color={color} size={20} />;
+            return <FontAwesomeIcon icon={faTicketAlt} color={color} size={20} />;
           },
         }}
         component={TicketsStackNavigator}
       />
       <Tab.Screen
-        name="Camera"
+        name="Scan"
         options={{
-          tabBarLabel: "Camera",
+          tabBarLabel: "Scan",
           tabBarIcon: ({ color }) => (
-            <FontAwesomeIcon icon={faCreditCard} color={color} size={20} />
+            <FontAwesomeIcon icon={faQrcode} color={color} size={20} />
           ),
         }}
         component={Camera}
@@ -69,7 +67,7 @@ function Home(): JSX.Element {
         options={{
           tabBarLabel: "Settings",
           tabBarIcon: ({ color, focused }) => {
-            return <FontAwesomeIcon icon={faRocket} color={color} size={20} />;
+            return <FontAwesomeIcon icon={faEdit} color={color} size={20} />;
           },
         }}
         component={Settings}
