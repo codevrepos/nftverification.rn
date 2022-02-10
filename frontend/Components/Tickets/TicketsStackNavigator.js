@@ -6,6 +6,8 @@ import { Header, HeaderLeft, HeaderRight } from '../Header/Header';
 import LeftChevron from '../Header/LeftChevron';
 import colors from '../../theme/colors';
 import { Alert } from 'react-native';
+import TicketsFilter from './TicketsFilter';
+import { TransitionPresets } from '@react-navigation/stack';
 
 const Stack = createStackNavigator();
 
@@ -25,7 +27,7 @@ const TicketsStackNavigator = (props) => {
         options={({ route }) => ({
           headerLeft: () => <HeaderLeft onPress={() => Alert.alert('Search')} />,
           title: <Header />,
-          headerRight: () => <HeaderRight onPress={() => Alert.alert('Sort')} />
+          headerRight: () => <HeaderRight onPress={() => props.navigation.navigate('TicketsFilter')} />
         })}
 
       />
@@ -34,8 +36,20 @@ const TicketsStackNavigator = (props) => {
         component={QRCodeScreen}
         options={({ route }) => ({
           title: `Details #${route.params.tokenId}`,
-          // TODO: use headerBackImageSource to get the back icon
           headerLeft: () => <LeftChevron onPress={() => props.navigation.goBack()} />
+        })}
+      />
+      <Stack.Screen
+        name="TicketsFilter"
+        component={TicketsFilter}
+        options={({ route }) => ({
+          presentation: 'transparentModal',
+          cardStyle: { top: 500 },
+          gestureResponseDistance: 1000,
+          headerShown: false,
+          gestureEnabled: true,
+          // Transition Presets: https://reactnavigation.org/docs/stack-navigator/#transitionpresets
+          ...TransitionPresets.ModalSlideFromBottomIOS,
         })}
       />
     </Stack.Navigator>
