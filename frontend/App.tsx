@@ -31,7 +31,9 @@ function Home(): JSX.Element {
     <Tab.Navigator
       shifting={false}
       activeColor="#315399"
-      barStyle={{ backgroundColor: "white" }}>
+      barStyle={{ backgroundColor: "white" }}
+    >
+      
       <Tab.Screen
         name="Tickets"
         options={{
@@ -109,6 +111,7 @@ function App(): JSX.Element {
           component={CryptoAuth}
           options={{ headerShown: false }}
         />
+        {/* TODO: add area for modals, controllable by context */}
         <Stack.Screen
           name="DrawerNavigationRoutes"
           component={Home}
