@@ -8,7 +8,7 @@ import { TouchableOpacity } from 'react-native-gesture-handler';
 import { SwipeablePanel } from 'rn-swipeable-panel';
 import TicketsFilter from './TicketsFilter';
 import Modal from 'react-native-modal';
-import BottomModal from '../Modal/BottomModal';
+import BottomModal from '../Modals/BottomModal';
 
 const TicketsScreen = (props) => {
   const [isVisible, setIsVisible] = useState(false);
