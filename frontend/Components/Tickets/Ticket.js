@@ -2,7 +2,7 @@ import React from 'react';
 import { Image, TouchableOpacity } from 'react-native';
 import { Box } from '../Box/Box';
 import colors from '../../theme/colors';
-import text from '../../theme/text.js';
+import text from '../../theme/text';
 import { Typography } from '../Typography/Typography';
 
 const Ticket = (props) => {

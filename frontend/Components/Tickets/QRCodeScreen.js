@@ -4,12 +4,43 @@ import { Typography } from '../Typography/Typography';
 import colors from '../../theme/colors';
 import text from '../../theme/text';
 import QRCode from 'react-native-qrcode-svg';
+import CustomLinearGradient from '../CustomLinearGradient/CustomLinearGradient';
+// import Animated, {
+//   useSharedValue,
+//   useAnimatedProps,
+//   withTiming,
+//   Easing,
+// } from 'react-native-reanimated'
+
+// const AnimatedTypography = Animated.createAnimatedComponent(Typography);
 
 const QRCodeScreen = (props) => {
   const { collection, name, tokenId, imageUrl } = props.route.params;
+  
   // TODO: Change with real wallet address data
   const wallet = '0xf4a726c2dea3860b6fce8e9fa85d7c508441c150';
   const walletTruncated = `${wallet.substring(0, 6)}...${wallet.substring(wallet.length - 4, wallet.length)}`;
+  //TODO: Animation
+  // const vOffset = useSharedValue(-900)
+
+  // const config = {
+  //   duration: 1500,
+  //   easing: Easing.bezier(0.5, 0.01, 0, 1),
+  // }
+
+  // const animatedProps = useAnimatedProps(() => {
+  //   return {
+  //     translateY: withTiming(vOffset.value, config),
+  //   }
+  // })
+
+  // const animateIn = () => {
+  //   vOffset.value = 0
+  // }
+
+  // useEffect(() => {
+  //   animateIn()
+  // }, [])
 
   return (
     <Box height=' 100%' backgroundColor={colors.neutral_50}>
@@ -27,21 +58,30 @@ const QRCodeScreen = (props) => {
         </Typography>
         <Box ml='auto' mr='auto' top='24px' borderRadius='8px' overflow='hidden'>
           <QRCode
-            value="Just some string value"
+            value='Just some string value'
             size={220}
             logo={imageUrl}
             logoSize={60}
             logoBorderRadius={8}
           />
         </Box>
-        {/* TODO: overflow='hidden' once animation is complete */}
-        {/* TODO: Add background SVG image https://stackoverflow.com/questions/32027965/does-react-native-styles-support-gradients */}
-        <Box mt='45px' height='35px' width='100%' border='1px' display="flex" flexDirection="row" alignItems='center'>
+        <Box
+          mt='45px'
+          height='35px'
+          width='100%'
+          display='flex'
+          flexDirection='row'
+          alignItems='center'
+          overflow='hidden'
+        >
+          <Box position={'absolute'} >
+            <CustomLinearGradient color1='#1890D3' color2='#2F69C0' height={35} />
+          </Box>
           {[...Array(7)].map(el => {
             return (
               <>
-              <Typography {...text.body_semibold_14_14} mx='9px'>{collection}</Typography>
-              <Typography fontSize='5px'>{'\u2B24'}</Typography>
+                <Typography {...text.body_semibold_14_14} mx='9px' color='white'>{collection}</Typography>
+                <Typography fontSize='5px' color='white'>{'\u2B24'}</Typography>
               </>
             )
           })}
@@ -74,3 +114,5 @@ const QRCodeScreen = (props) => {
 };
 
 export default QRCodeScreen;
+
+

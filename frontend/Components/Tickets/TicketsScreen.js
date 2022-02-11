@@ -11,7 +11,7 @@ import Modal from 'react-native-modal';
 import BottomModal from '../Modals/BottomModal';
 
 const TicketsScreen = (props) => {
-  const [isVisible, setIsVisible] = useState(true);
+  const [isVisible, setIsVisible] = useState(false);
 
   const openModal = () => {
     setIsVisible(true);
