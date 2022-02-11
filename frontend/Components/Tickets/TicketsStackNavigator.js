@@ -2,7 +2,7 @@ import React from 'react';
 import { createStackNavigator } from "@react-navigation/stack";
 import TicketsScreen from './TicketsScreen';
 import QRCodeScreen from './QRCodeScreen';
-import { Header, HeaderLeft, HeaderRight } from '../Header/Header';
+import { Header, HeaderSearch, HeaderFilter } from '../Header/Header';
 import LeftChevron from '../Header/LeftChevron';
 import colors from '../../theme/colors';
 import { Alert } from 'react-native';
@@ -23,9 +23,9 @@ const TicketsStackNavigator = (props) => {
         name="TicketsScreen"
         component={TicketsScreen}
         options={({ route }) => ({
-          headerLeft: () => <HeaderLeft onPress={() => Alert.alert('Search')} />,
+          headerLeft: () => <HeaderSearch onPress={() => Alert.alert('Search')} />,
           title: <Header />,
-          headerRight: () => <HeaderRight onPress={() => Alert.alert('Filter')} />
+          headerRight: () => <HeaderFilter />
         })}
       />
       <Stack.Screen
