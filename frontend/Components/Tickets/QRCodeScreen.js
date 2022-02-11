@@ -5,14 +5,6 @@ import colors from '../../theme/colors';
 import text from '../../theme/text';
 import QRCode from 'react-native-qrcode-svg';
 import CustomLinearGradient from '../CustomLinearGradient/CustomLinearGradient';
-// import Animated, {
-//   useSharedValue,
-//   useAnimatedProps,
-//   withTiming,
-//   Easing,
-// } from 'react-native-reanimated'
-
-// const AnimatedTypography = Animated.createAnimatedComponent(Typography);
 
 const QRCodeScreen = (props) => {
   const { collection, name, tokenId, imageUrl } = props.route.params;
@@ -20,34 +12,10 @@ const QRCodeScreen = (props) => {
   // TODO: Change with real wallet address data
   const wallet = '0xf4a726c2dea3860b6fce8e9fa85d7c508441c150';
   const walletTruncated = `${wallet.substring(0, 6)}...${wallet.substring(wallet.length - 4, wallet.length)}`;
-  //TODO: Animation
-  // const vOffset = useSharedValue(-900)
-
-  // const config = {
-  //   duration: 1500,
-  //   easing: Easing.bezier(0.5, 0.01, 0, 1),
-  // }
-
-  // const animatedProps = useAnimatedProps(() => {
-  //   return {
-  //     translateY: withTiming(vOffset.value, config),
-  //   }
-  // })
-
-  // const animateIn = () => {
-  //   vOffset.value = 0
-  // }
-
-  // useEffect(() => {
-  //   animateIn()
-  // }, [])
 
   return (
     <Box height=' 100%' backgroundColor={colors.neutral_50}>
-      {/* <Typography>
-        {collection}, {name}, {tokenId}
-      </Typography> */}
-      <Box mt='20px' mx='36px' backgroundColor='white' borderRadius='8px'>
+      <Box mt='20px' mx='36px' backgroundColor='white' borderRadius='8px' borderRadius='8px'>
         <Typography
           mt='24px'
           textAlign='center'
@@ -108,6 +76,24 @@ const QRCodeScreen = (props) => {
             Wallet address: {walletTruncated}
           </Typography>
         </Box>
+      </Box>
+      <Box
+        mt='24px'
+        p='10px'
+        border={1}
+        borderColor={colors.neutral_200}
+        backgroundColor='white'
+        borderRadius='8px'
+        marginLeft='46px'
+        marginRight='46px'
+      >
+        <Typography
+          textAlign='center'
+          {...text.body_medium_14_14}
+          color='black'
+        >
+          Last update 04 February 2022 at 13:59
+        </Typography>
       </Box>
     </Box>
   )
