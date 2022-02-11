@@ -9,15 +9,16 @@ import WalletConnectProvider, {
 import {Platform} from 'react-native';
 //import Qrcode from "./Qrcode";
 //import { expo } from "../app.json";
-import {MoralisDappProvider} from './providers/MoralisDappProvider/MoralisDappProvider';
+import {MoralisDappProvider} from './providers/MoralisDappProvider';
 import {ApplicationProvider, Layout, Text} from '@ui-kitten/components';
 import * as eva from '@eva-design/eva';
 import {
   REACT_APP_MORALIS_APPLICATION_ID,
   REACT_APP_MORALIS_SERVER_URL,
 } from '@env';
+import { ModalContextProvider } from './providers/ModalProvider';
 
-interface ProvidersProps {
+interface ProvidersProps {  
   readonly children: JSX.Element;
 }
 
@@ -62,7 +63,9 @@ export const Providers = ({children}: ProvidersProps) => {
         environment={environment}>
         <MoralisDappProvider>
           <ApplicationProvider {...eva} theme={eva.light}>
-            {children}
+            <ModalContextProvider>
+              {children}
+            </ModalContextProvider>
           </ApplicationProvider>
         </MoralisDappProvider>
       </MoralisProvider>
