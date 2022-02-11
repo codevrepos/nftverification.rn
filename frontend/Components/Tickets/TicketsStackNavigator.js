@@ -25,9 +25,8 @@ const TicketsStackNavigator = (props) => {
         options={({ route }) => ({
           headerLeft: () => <HeaderLeft onPress={() => Alert.alert('Search')} />,
           title: <Header />,
-          headerRight: () => <HeaderRight onPress={() => props.navigation.navigate('TicketsFilter')} />
+          headerRight: () => <HeaderRight onPress={() => Alert.alert('Filter')} />
         })}
-
       />
       <Stack.Screen
         name="QRCodeScreen"

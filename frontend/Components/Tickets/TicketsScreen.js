@@ -11,7 +11,7 @@ import Modal from 'react-native-modal';
 import BottomModal from '../Modals/BottomModal';
 
 const TicketsScreen = (props) => {
-  const [isVisible, setIsVisible] = useState(false);
+  const [isVisible, setIsVisible] = useState(true);
 
   const openModal = () => {
     setIsVisible(true);
@@ -53,10 +53,10 @@ const TicketsScreen = (props) => {
       />
       <BottomModal
         isVisible={isVisible}
-        height='250px'
+        height={300} // TODO: Change height based on # of items or use Scrollview
         closeModal={closeModal}
       >
-        <TicketsFilter />
+        <TicketsFilter height={300}/>
       </BottomModal>
 
     </Box>
