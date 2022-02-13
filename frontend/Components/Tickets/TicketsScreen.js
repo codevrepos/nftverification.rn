@@ -1,11 +1,12 @@
 import React, { useContext, useEffect } from 'react';
-import { SafeAreaView, FlatList } from 'react-native';
+import { SafeAreaView, FlatList, TouchableOpacity } from 'react-native';
 import { Box } from '../Box/Box';
 import colors from '../../theme/colors';
 import Ticket from './Ticket';
 import { ModalContext } from '../../providers/ModalProvider';
 import { Typography } from '../Typography/Typography';
 import text from '../../theme/text';
+import Toast from 'react-native-toast-message';
 
 const NoResults = (props) => {
   const { search } = props;
