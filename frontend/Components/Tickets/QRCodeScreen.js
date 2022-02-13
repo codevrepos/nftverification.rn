@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { Box } from '../Box/Box';
 import { Typography } from '../Typography/Typography';
 import colors from '../../theme/colors';
@@ -6,6 +6,7 @@ import text from '../../theme/text';
 import QRCode from 'react-native-qrcode-svg';
 import CustomLinearGradient from '../CustomLinearGradient/CustomLinearGradient';
 import Shimmer from '../Shimmer/Shimmer';
+import Animated, { useSharedValue, useAnimatedStyle, Easing, withTiming, withSequence, withRepeat } from 'react-native-reanimated';
 
 export const QRCodeScreenLoading = (props) => {
   return (
@@ -47,7 +48,31 @@ export const QRCodeScreenLoading = (props) => {
 
 export const QRCodeScreen = (props) => {
   const { collection, name, tokenId, imageUrl } = props.route.params;
-  
+
+  const TRANSLATE_X_DURATION = 90000;
+  const PAUSE_DURATION = 5000;
+  const offset = useSharedValue(-500);
+
+  useEffect(() => {
+    offset.value = withRepeat(
+      withSequence(
+        withTiming(0, { duration: TRANSLATE_X_DURATION, easing: Easing.bezier(0, 0, 1, 1) }),
+        withTiming(0, { duration: PAUSE_DURATION, easing: Easing.bezier(0, 0, 1, 1) }),
+        withTiming(-500, { duration: TRANSLATE_X_DURATION, easing: Easing.bezier(0, 0, 1, 1) }),
+        withTiming(-500, { duration: PAUSE_DURATION, easing: Easing.bezier(0, 0, 1, 1) }),
+      ),
+      -1,
+      true,
+      null
+    )
+  }, []);
+
+  const offsetStyle = useAnimatedStyle(() => {
+    return {
+      transform: [{ translateX: offset.value }],
+    };
+  });
+
   // TODO: Change with real wallet address data
   const wallet = '0xf4a726c2dea3860b6fce8e9fa85d7c508441c150';
   const walletTruncated = `${wallet.substring(0, 6)}...${wallet.substring(wallet.length - 4, wallet.length)}`;
@@ -84,14 +109,16 @@ export const QRCodeScreen = (props) => {
           <Box position={'absolute'} >
             <CustomLinearGradient color1='#1890D3' color2='#2F69C0' height={35} />
           </Box>
-          {[...Array(7)].map(el => {
-            return (
-              <>
-                <Typography {...text.body_semibold_14_14} mx='9px' color='white'>{collection}</Typography>
-                <Typography fontSize='5px' color='white'>{'\u2B24'}</Typography>
-              </>
-            )
-          })}
+          <Box as={Animated.View} width='100%' flexDirection='row' style={offsetStyle}>
+            {[...Array(20)].map(el => {
+              return (
+                <Box flexDirection='row' justifyContent='center' alignItems='center'>
+                  <Typography {...text.body_semibold_14_14} mx='9px' color='white'>{collection}</Typography>
+                  <Typography fontSize='5px' color='white'>{'\u2B24'}</Typography>
+                </Box>
+              )
+            })}
+          </Box>
         </Box>
         <Box mx='24px' mt='15px' mb='24px'>
           <Typography
