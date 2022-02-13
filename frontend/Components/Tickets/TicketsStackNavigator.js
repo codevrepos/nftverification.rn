@@ -1,16 +1,36 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { createStackNavigator } from "@react-navigation/stack";
 import TicketsScreen from './TicketsScreen';
 import QRCodeScreen from './QRCodeScreen';
-import { Header, HeaderSearch, HeaderFilter } from '../Header/Header';
+import Header from '../Header/Header';
 import LeftChevron from '../../../assets/icons/LeftChevron';
 import colors from '../../theme/colors';
 import { Alert, TouchableOpacity } from 'react-native';
 import { Box } from '../Box/Box';
+import { Typography } from '../Typography/Typography';
 
 const Stack = createStackNavigator();
 
 const TicketsStackNavigator = (props) => {
+  const [isSearchVisible, setIsSearchVisible] = useState(false);
+  const [isFilterVisible, setIsFilterVisible] = useState(false);
+
+  const openSearch = () => {
+    setIsSearchVisible(true);
+  };
+
+  const closeSearch = () => {
+    setIsSearchVisible(false);
+  }
+
+  const openFilter = () => {
+    setIsFilterVisible(true);
+  };
+
+  const closeFilter = () => {
+    setIsFilterVisible(false);
+  };
+
   return (
     <Stack.Navigator
       screenOptions={{
@@ -24,9 +44,15 @@ const TicketsStackNavigator = (props) => {
         name="TicketsScreen"
         component={TicketsScreen}
         options={({ route }) => ({
-          headerLeft: () => <HeaderSearch onPress={() => Alert.alert('Search')} />,
-          title: <Header />,
-          headerRight: () => <HeaderFilter />
+          header: () => (
+            <Header
+              isSearchVisible={isSearchVisible}
+              openSearch={openSearch}
+              closeSearch={closeSearch}
+              isFilterVisible={isFilterVisible}
+              openFilter={openFilter}
+              closeFilter={closeFilter} />
+            ),
         })}
       />
       <Stack.Screen

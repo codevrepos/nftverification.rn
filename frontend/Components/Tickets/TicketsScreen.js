@@ -1,10 +1,13 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { SafeAreaView, FlatList } from 'react-native';
 import { Box } from '../Box/Box';
 import colors from '../../theme/colors';
 import Ticket from './Ticket';
+import { ModalContext } from '../../providers/ModalProvider';
 
 const TicketsScreen = (props) => {
+  const { search } = useContext(ModalContext);
+
   const renderItem = ({ item, index }) => {
     return (
       <Ticket
@@ -22,7 +25,8 @@ const TicketsScreen = (props) => {
   const data = [
     {imageUrl: 'https://www.penthousepantherclub.com/fur_paisley_small.png', collection: "Bored Ape Yacht Club", name: "#1", tokenId: 1},
     {imageUrl: 'https://www.penthousepantherclub.com/fur_paisley_small.png', collection: "Bored Ape Yacht Club", name: "#2", tokenId: 2},
-    {imageUrl: 'https://www.penthousepantherclub.com/fur_paisley_small.png', collection: "Bored Ape Yacht Club", name: "#3", tokenId: 3}
+    {imageUrl: 'https://www.penthousepantherclub.com/fur_paisley_small.png', collection: "Bored Ape Yacht Club", name: "#3", tokenId: 3},
+    {imageUrl: 'https://www.penthousepantherclub.com/fur_paisley_small.png', collection: "Bored Ape Yacht Club", name: "#4", tokenId: 4}
   ];
 
   return (
