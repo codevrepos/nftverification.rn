@@ -4,6 +4,7 @@ import { Box } from '../Box/Box';
 import colors from '../../theme/colors';
 import text from '../../theme/text';
 import { Typography } from '../Typography/Typography';
+import Shimmer from '../Shimmer/Shimmer';
 
 export const TicketLoading = (props) => {
   return (
@@ -18,17 +19,17 @@ export const TicketLoading = (props) => {
       flexDirection='row'
       mt='8px'
     >
-      <Box
+      <Shimmer
         height='76px'
         width='76px'
         borderRadius='8px'
         overflow="hidden"
-        backgroundColor='grey'
+        backgroundColor={colors.neutral_100}
       />
       <Box ml='16px' mt='10px'>
-        <Box height='14px' width='160px' backgroundColor='grey' borderRadius='2px' />
-        <Box height='14px' width='125px' backgroundColor='grey' borderRadius='2px' mt='8px' />
-        <Box height='14px' width='175px' backgroundColor='grey' borderRadius='2px' mt='8px' />
+        <Shimmer height='14px' width='160px' backgroundColor={colors.neutral_100} borderRadius='2px' />
+        <Shimmer height='14px' width='125px' backgroundColor={colors.neutral_100} borderRadius='2px' mt='8px' />
+        <Shimmer height='14px' width='175px' backgroundColor={colors.neutral_100} borderRadius='2px' mt='8px' />
       </Box>
     </Box>
   )
