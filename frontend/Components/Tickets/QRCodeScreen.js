@@ -6,7 +6,46 @@ import text from '../../theme/text';
 import QRCode from 'react-native-qrcode-svg';
 import CustomLinearGradient from '../CustomLinearGradient/CustomLinearGradient';
 
-const QRCodeScreen = (props) => {
+export const QRCodeScreenLoading = (props) => {
+  return (
+    <Box height=' 100%' backgroundColor={colors.neutral_50}>
+      <Box mt='20px' mx='36px' backgroundColor='white' borderRadius='8px' borderRadius='8px'>
+        <Box mt='24px' width='196px' height='14px' backgroundColor='grey' ml='auto' mr='auto' borderRadius='2px' />
+        <Box top='24px' borderRadius='8px' width='256px' height='256px' ml='auto' mr='auto' backgroundColor='grey' />
+        <Box
+          mt='45px'
+          height='35px'
+          width='100%'
+          backgroundColor='grey'
+        >
+        </Box>
+        <Box
+          mx='24px'
+          mt='15px'
+          mb='24px'
+        >
+          <Box width='160px' height='24px' borderRadius='4px' backgroundColor='grey' />
+          <Box width='125px' height='14px' borderRadius='2px' mt='12px' backgroundColor='grey'/>
+          <Box width='175px' height='14px' borderRadius='2px' mt='12px' backgroundColor='grey'/>
+      </Box>
+      </Box>
+      <Box
+        mt='24px'
+        p='10px'
+        border={1}
+        borderColor={colors.neutral_200}
+        backgroundColor='white'
+        borderRadius='8px'
+        ml='auto'
+        mr='auto'
+      >
+        <Box width='262px' height='14px' borderRadius='2px' backgroundColor='grey'/>
+      </Box>
+    </Box>
+  )
+};
+
+export const QRCodeScreen = (props) => {
   const { collection, name, tokenId, imageUrl } = props.route.params;
   
   // TODO: Change with real wallet address data
@@ -98,7 +137,3 @@ const QRCodeScreen = (props) => {
     </Box>
   )
 };
-
-export default QRCodeScreen;
-
-

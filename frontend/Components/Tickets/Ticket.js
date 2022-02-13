@@ -5,7 +5,36 @@ import colors from '../../theme/colors';
 import text from '../../theme/text';
 import { Typography } from '../Typography/Typography';
 
-const Ticket = (props) => {
+export const TicketLoading = (props) => {
+  return (
+    <Box
+      backgroundColor='white'
+      border='1px'
+      borderColor={colors.neutral_200}
+      borderRadius='8px'
+      mx='16px'
+      p='16px'
+      display='flex'
+      flexDirection='row'
+      mt='8px'
+    >
+      <Box
+        height='76px'
+        width='76px'
+        borderRadius='8px'
+        overflow="hidden"
+        backgroundColor='grey'
+      />
+      <Box ml='16px' mt='10px'>
+        <Box height='14px' width='160px' backgroundColor='grey' borderRadius='2px' />
+        <Box height='14px' width='125px' backgroundColor='grey' borderRadius='2px' mt='8px' />
+        <Box height='14px' width='175px' backgroundColor='grey' borderRadius='2px' mt='8px' />
+      </Box>
+    </Box>
+  )
+}
+
+export const Ticket = (props) => {
   const { collection, name, tokenId, imageUrl } = props;
 
   return (
@@ -56,5 +85,3 @@ const Ticket = (props) => {
     </Box>
   )
 }
-
-export default Ticket;

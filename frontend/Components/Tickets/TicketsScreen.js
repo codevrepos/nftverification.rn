@@ -2,11 +2,10 @@ import React, { useContext, useEffect } from 'react';
 import { SafeAreaView, FlatList, TouchableOpacity } from 'react-native';
 import { Box } from '../Box/Box';
 import colors from '../../theme/colors';
-import Ticket from './Ticket';
+import { Ticket, TicketLoading } from './Ticket';
 import { ModalContext } from '../../providers/ModalProvider';
 import { Typography } from '../Typography/Typography';
 import text from '../../theme/text';
-import Toast from 'react-native-toast-message';
 
 const NoResults = (props) => {
   const { search } = props;
@@ -40,6 +39,21 @@ const NoResults = (props) => {
   )
 }
 
+const TicketsScreenLoading = (props) => {
+  return (
+    <>
+      <TicketLoading />
+      <TicketLoading />
+      <TicketLoading />
+      <TicketLoading />
+      <TicketLoading />
+      <TicketLoading />
+      <TicketLoading />
+      <TicketLoading />
+    </>
+  )
+};
+
 const TicketsScreen = (props) => {
   const { data, filter, search } = useContext(ModalContext);
 
@@ -56,13 +70,7 @@ const TicketsScreen = (props) => {
     )
   }
 
-  useEffect(() => {
-    console.log(filter);
-  }, [filter])
-
   const filteredData = !!filter ? data.filter(el => el.collection === filter) : data;
-  console.log(filteredData);
-  console.log(`filter ${filter}`);
 
   const searchData = filteredData.filter(el => {
     const collectionLowerCase = el.collection?.toLowerCase();
@@ -84,7 +92,6 @@ const TicketsScreen = (props) => {
         renderItem={renderItem}
         showsVerticalScrollIndicator={true}
       />
-
       {filteredData?.length === 0 && <NoResults search={search}/>}
     </Box>
   )
