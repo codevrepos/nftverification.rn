@@ -1,62 +1,42 @@
 import React, { useState } from 'react';
 import { Box } from '../Box/Box';
 import { Typography } from '../Typography/Typography';
-import Search from './Search';
-import Sort from './Sort';
-import { TouchableOpacity } from 'react-native';
+import Search from '../../../assets/icons/Search';
+import Sort from '../../../assets/icons/Sort';
+import { Pressable, SafeAreaView, TouchableOpacity } from 'react-native';
 import BottomModal from '../Modals/BottomModal';
 import TicketsFilter from '../Tickets/TicketsFilter';
+import HeaderModal from './HeaderFilter';
+import colors from '../../theme/colors';
 
-const Header = () => {
-  // TODO: Finish header
+const Header = (props) => {
+  const { isSearchVisible, openSearch, closeSearch, isFilterVisible, openFilter, closeFilter } = props;
+
   return (
-    <Box flex={1} flexDirection={'row'} justifyContent={'center'} alignItems={'center'}>
-      <Box>
-        <Typography>
-            Logo Pass
-        </Typography>
+    <Box as={SafeAreaView} flexDirection='row' justifyContent='space-between' backgroundColor={colors.neutral_50}>
+      <Box as={Pressable} p='10px' onPress={() => openSearch()} zIndex={1}>
+        <Search color='#363636' />
+        {isSearchVisible && <HeaderModal closeSearch={closeSearch} />}
+      </Box>
+      <Box flex={1} flexDirection={'row'} justifyContent={'center'} alignItems={'center'}>
+        <Box>
+          <Typography>
+              Logo Pass
+          </Typography>
+        </Box>
+      </Box>
+      <Box as={TouchableOpacity} p='10px' onPress={() => openFilter()}>
+        <Sort />
+        <BottomModal
+          isVisible={isFilterVisible}
+          height={300}
+          closeModal={closeFilter}
+        >
+          <TicketsFilter height={300}/>
+        </BottomModal>
       </Box>
     </Box>
   );
 };
 
-const HeaderSearch = (props) => {
-  const { onPress } = props;
-
-  return (
-    <Box as={TouchableOpacity} ml='10px' p='5px' onPress={() => onPress()}>
-      <Search />
-    </Box>
-  )
-}
-
-const HeaderFilter = (props) => {
-  const [isVisible, setIsVisible] = useState(false);
-
-  const openModal = () => {
-    setIsVisible(true);
-  };
-
-  const closeModal = () => {
-    setIsVisible(false);
-  };
-
-  return (
-    <Box as={TouchableOpacity} mr='10px' p='5px' onPress={() => openModal()}>
-      <Sort />
-      <BottomModal
-        isVisible={isVisible}
-        height={300}
-        closeModal={closeModal}
-      >
-        <TicketsFilter height={300}/>
-      </BottomModal>
-    </Box>
-  )
-}
-
-export {
-  Header,
-  HeaderSearch,
-  HeaderFilter
-}
+export default Header;

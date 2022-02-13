@@ -35,7 +35,6 @@ const BottomModal = (props) => {
           {children}
         </Box>
       </Modal>
-
   )
 }
 

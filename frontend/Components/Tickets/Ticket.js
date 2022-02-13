@@ -30,7 +30,7 @@ const Ticket = (props) => {
       <Box
         height='76px'
         width='76px'
-        borderRadius='16px'
+        borderRadius='8px'
         overflow="hidden"
       >
         <Image
