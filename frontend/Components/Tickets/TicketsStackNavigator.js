@@ -1,13 +1,12 @@
 import React, { useState } from 'react';
 import { createStackNavigator } from "@react-navigation/stack";
 import TicketsScreen from './TicketsScreen';
-import QRCodeScreen from './QRCodeScreen';
+import { QRCodeScreen } from './QRCodeScreen';
 import Header from '../Header/Header';
 import LeftChevron from '../../../assets/icons/LeftChevron';
 import colors from '../../theme/colors';
-import { Alert, TouchableOpacity } from 'react-native';
+import { TouchableOpacity } from 'react-native';
 import { Box } from '../Box/Box';
-import { Typography } from '../Typography/Typography';
 
 const Stack = createStackNavigator();
 
