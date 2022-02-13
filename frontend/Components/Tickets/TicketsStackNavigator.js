@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { createStackNavigator } from "@react-navigation/stack";
-import TicketsScreen from './TicketsScreen';
+import { TicketsScreen } from './TicketsScreen';
 import { QRCodeScreen } from './QRCodeScreen';
 import Header from '../Header/Header';
 import LeftChevron from '../../../assets/icons/LeftChevron';

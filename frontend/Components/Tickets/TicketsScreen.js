@@ -39,7 +39,7 @@ const NoResults = (props) => {
   )
 }
 
-const TicketsScreenLoading = (props) => {
+export const TicketsScreenLoading = (props) => {
   return (
     <>
       <TicketLoading />
@@ -54,7 +54,7 @@ const TicketsScreenLoading = (props) => {
   )
 };
 
-const TicketsScreen = (props) => {
+export const TicketsScreen = (props) => {
   const { data, filter, search } = useContext(ModalContext);
 
   const renderItem = ({ item, index }) => {
@@ -96,5 +96,3 @@ const TicketsScreen = (props) => {
     </Box>
   )
 }
-
-export default TicketsScreen;
