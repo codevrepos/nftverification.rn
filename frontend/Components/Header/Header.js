@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { Box } from '../Box/Box';
 import { Typography } from '../Typography/Typography';
 import Search from '../../../assets/icons/Search';
-import Sort from '../../../assets/icons/Sort';
+import Filter from '../../../assets/icons/Filter';
 import { Pressable, SafeAreaView, TouchableOpacity } from 'react-native';
 import BottomModal from '../Modals/BottomModal';
 import TicketsFilter from '../Tickets/TicketsFilter';
@@ -26,7 +26,7 @@ const Header = (props) => {
         </Box>
       </Box>
       <Box as={TouchableOpacity} p='10px' onPress={() => openFilter()}>
-        <Sort />
+        <Filter />
         <BottomModal
           isVisible={isFilterVisible}
           height={350}
