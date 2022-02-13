@@ -1,4 +1,4 @@
-import React, { useContext } from 'react';
+import React, { useContext, useEffect } from 'react';
 import { SafeAreaView, FlatList } from 'react-native';
 import { Box } from '../Box/Box';
 import colors from '../../theme/colors';
@@ -40,7 +40,7 @@ const NoResults = (props) => {
 }
 
 const TicketsScreen = (props) => {
-  const { search } = useContext(ModalContext);
+  const { data, filter, search } = useContext(ModalContext);
 
   const renderItem = ({ item, index }) => {
     return (
@@ -55,15 +55,15 @@ const TicketsScreen = (props) => {
     )
   }
 
-  // TODO: replace with API data
-  const data = [
-    {imageUrl: 'https://www.penthousepantherclub.com/fur_paisley_small.png', collection: "Azuki", name: "#1", tokenId: 1},
-    {imageUrl: 'https://www.penthousepantherclub.com/fur_paisley_small.png', collection: "Bored Ape Yacht Club", name: "#2", tokenId: 2},
-    {imageUrl: 'https://www.penthousepantherclub.com/fur_paisley_small.png', collection: "CryptoPunks", name: "#3", tokenId: 3},
-    {imageUrl: 'https://www.penthousepantherclub.com/fur_paisley_small.png', collection: "CyberKongz", name: "#4", tokenId: 4}
-  ];
+  useEffect(() => {
+    console.log(filter);
+  }, [filter])
 
-  const filteredData = data.filter(el => {
+  const filteredData = !!filter ? data.filter(el => el.collection === filter) : data;
+  console.log(filteredData);
+  console.log(`filter ${filter}`);
+
+  const searchData = filteredData.filter(el => {
     const collectionLowerCase = el.collection?.toLowerCase();
     const nameLowerCase = el.name?.toLowerCase();
     const searchLowerCase = search?.toLowerCase();
@@ -79,7 +79,7 @@ const TicketsScreen = (props) => {
   return (
     <Box as={SafeAreaView} backgroundColor={colors.neutral_50} pt='10px' height='100%'>
       <FlatList
-        data={!!search ? filteredData : data}
+        data={!!search ? searchData : filteredData}
         renderItem={renderItem}
         showsVerticalScrollIndicator={true}
       />

@@ -29,10 +29,10 @@ const Header = (props) => {
         <Sort />
         <BottomModal
           isVisible={isFilterVisible}
-          height={300}
+          height={350}
           closeModal={closeFilter}
         >
-          <TicketsFilter height={300}/>
+          <TicketsFilter height={350} closeFilter={closeFilter} />
         </BottomModal>
       </Box>
     </Box>

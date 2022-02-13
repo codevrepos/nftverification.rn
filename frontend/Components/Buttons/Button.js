@@ -6,7 +6,7 @@ import { Box } from '../Box/Box';
 import { Typography } from '../Typography/Typography';
 
 const Button = (props) => {
-  const { children, width } = props;
+  const { onPress, children, width } = props;
 
   return (
     <Box
@@ -18,6 +18,7 @@ const Button = (props) => {
       display='flex'
       justifyContent='center'
       alignItems='center'
+      onPress={() => onPress()}
     >
       <Typography
         // textAlign='center'
