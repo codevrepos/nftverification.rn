@@ -1,12 +1,12 @@
 import React, { useState } from 'react';
 import { Box } from '../Box/Box';
 import { Typography } from '../Typography/Typography';
-import Search from './Search';
-import Sort from './Sort';
+import Search from '../../../assets/icons/Search';
+import Sort from '../../../assets/icons/Sort';
 import { Pressable, SafeAreaView, TouchableOpacity } from 'react-native';
 import BottomModal from '../Modals/BottomModal';
 import TicketsFilter from '../Tickets/TicketsFilter';
-import HeaderModal from '../Modals/HeaderModal';
+import HeaderModal from './HeaderFilter';
 import colors from '../../theme/colors';
 
 const Header = (props) => {

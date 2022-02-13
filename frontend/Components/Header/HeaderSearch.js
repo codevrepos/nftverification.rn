@@ -1,16 +1,16 @@
-import React, { useContext, useEffect } from 'react';
+import React, { useContext } from 'react';
 import { TextInput } from 'react-native';
-import { TouchableOpacity } from 'react-native';
+import { Dimensions, TouchableOpacity } from 'react-native';
 import { Box } from '../Box/Box';
 import { Typography } from '../Typography/Typography';
-import { Dimensions } from 'react-native';
 import colors from '../../theme/colors';
 import text from '../../theme/text';
 import { ModalContext } from '../../providers/ModalProvider';
-import Search from '../Header/Search';
+import Search from '../../../assets/icons/Search';
+import Close from '../../../assets/icons/Close';
 const { width } = Dimensions.get('window')
 
-const HeaderModal = (props) => {
+const HeaderSearch = (props) => {
   const { search, setSearch } = useContext(ModalContext);
   const { closeSearch } = props;
 
@@ -33,7 +33,6 @@ const HeaderModal = (props) => {
         flexDirection='row'
         justifyContent='flex-start'
         alignItems='center'
-        backgroundColor={colors.neutral_50}
       >
         <Box
           flexDirection='row'
@@ -46,24 +45,42 @@ const HeaderModal = (props) => {
             flexDirection='row'
             justifyContent='flex-start'
             alignItems='center'
-            mx='12px'
+            ml='12px'
+            mr='6px'
+            flex={1}
           >
             <Search color={colors.neutral_400} />
           </Box>
-          <TextInput
-            background
-            onChangeText={setSearch}
-            value={search}
-            placeholder="Search for events..."
-            width='100%'
-            style={{
-              fontFamily: 'Inter',
-              fontStyle: 'normal',
-              fontWeight: '500',
-              fontSize: 14,
-              color: colors.neutral_800
-            }}
-          />
+          <Box
+            flexDirection='row'
+            justifyContent='flex-start'
+            alignItems='center'
+            flex={8}
+          >
+            <TextInput
+              background
+              onChangeText={setSearch}
+              value={search}
+              placeholder="Search for events..."
+              style={{
+                fontFamily: 'Inter',
+                fontStyle: 'normal',
+                fontWeight: '500',
+                fontSize: 14,
+                color: colors.neutral_800
+              }}
+            />
+          </Box>
+          <Box
+            as={TouchableOpacity}
+            flex={1.2}
+            flexDirection='row'
+            justifyContent='center'
+            alignItems='center'
+            onPress={() => setSearch(undefined)}
+          >
+            {search?.length > 0 && <Close color={colors.neutral_400} />}
+          </Box>
         </Box>
       </Box>
       <Box
@@ -81,4 +98,4 @@ const HeaderModal = (props) => {
   )
 };
 
-export default HeaderModal;
+export default HeaderSearch;

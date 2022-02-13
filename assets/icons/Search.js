@@ -1,6 +1,6 @@
 import React from 'react';
 import Svg, { G, Path } from 'react-native-svg';
-import { Box } from '../Box/Box';
+import { Box } from '../../frontend/Components/Box/Box';
 
 const Search = (props) => {
   const { color } = props;
