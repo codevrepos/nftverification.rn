@@ -19,6 +19,8 @@ import Settings from './Components/Settings/Settings';
 
 import {FontAwesomeIcon} from '@fortawesome/react-native-fontawesome';
 import {faQrcode, faTicketAlt, faEdit} from '@fortawesome/free-solid-svg-icons';
+import Toast from 'react-native-toast-message';
+import {toastConfig} from './Components/Toast/ToastCustom';
 
 LogBox.ignoreAllLogs();
 
@@ -96,34 +98,29 @@ function App(): JSX.Element {
   return (
     <>
       <NavigationContainer>
-        <Stack.Navigator initialRouteName="SplashScreen"
-          >
+        <Stack.Navigator initialRouteName="SplashScreen">
           <Stack.Screen
             name="SplashScreen"
             component={SplashScreen}
-            options={{ headerShown: false }}
+            options={{headerShown: false}}
           />
           <Stack.Screen
             name="Auth"
             component={CryptoAuth}
-            options={{ headerShown: false }}
+            options={{headerShown: false}}
           />
           {/* TODO: add area for modals, controllable by context */}
           <Stack.Screen
             name="DrawerNavigationRoutes"
             component={Home}
             options={{
-              headerTitle: (props) => <Header />,
-              headerShown: false
+              headerTitle: props => <Header />,
+              headerShown: false,
             }}
           />
         </Stack.Navigator>
       </NavigationContainer>
-      <Toast
-        position='bottom'
-        bottomOffset={120}
-        config={toastConfig}
-      />
+      <Toast position="bottom" bottomOffset={120} config={toastConfig} />
     </>
   );
 }
