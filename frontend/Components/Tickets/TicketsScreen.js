@@ -1,25 +1,61 @@
-import React, { useState } from 'react';
-import { SafeAreaView, FlatList, Alert } from 'react-native';
+import React, { useContext, useEffect } from 'react';
+import { SafeAreaView, FlatList, TouchableOpacity } from 'react-native';
 import { Box } from '../Box/Box';
 import colors from '../../theme/colors';
-import Ticket from './Ticket';
+import { Ticket, TicketLoading } from './Ticket';
+import { ModalContext } from '../../providers/ModalProvider';
 import { Typography } from '../Typography/Typography';
-import { TouchableOpacity } from 'react-native-gesture-handler';
-import { SwipeablePanel } from 'rn-swipeable-panel';
-import TicketsFilter from './TicketsFilter';
-import Modal from 'react-native-modal';
-import BottomModal from '../Modal/BottomModal';
+import text from '../../theme/text';
 
-const TicketsScreen = (props) => {
-  const [isVisible, setIsVisible] = useState(false);
+const NoResults = (props) => {
+  const { search } = props;
 
-  const openModal = () => {
-    setIsVisible(true);
-  };
+  return (
+    <Box height='100%' flexDirection='row' justifyContent='center' alignItems='center'>
+      <Box mx='16px'>
+          <Typography textAlign='center' fontSize='30px'>😓</Typography>
+          <Typography
+            {...text.headline_medium_18_18} color={colors.neutral_700}
+            textAlign='center'
+            mt='16px'>No Results</Typography>
+          <Typography
+            {...text.body_medium_14_14} color={colors.neutral_500}
+            textAlign='center'
+            mt='16px'
+            lineHeight='25px'
+          >
+            {`There were no results for "${search}".`}
+          </Typography>
+          <Typography
+            {...text.body_medium_14_14}
+            color={colors.neutral_500}
+            textAlign='center'
+            lineHeight='25px'
+          >
+            Try a new search.
+          </Typography>
+      </Box>
+    </Box>
+  )
+}
 
-  const closeModal = () => {
-    setIsVisible(false);
-  };
+export const TicketsScreenLoading = (props) => {
+  return (
+    <>
+      <TicketLoading />
+      <TicketLoading />
+      <TicketLoading />
+      <TicketLoading />
+      <TicketLoading />
+      <TicketLoading />
+      <TicketLoading />
+      <TicketLoading />
+    </>
+  )
+};
+
+export const TicketsScreen = (props) => {
+  const { data, filter, search } = useContext(ModalContext);
 
   const renderItem = ({ item, index }) => {
     return (
@@ -34,33 +70,29 @@ const TicketsScreen = (props) => {
     )
   }
 
-  // TODO: replace with API data
-  const data = [
-    {imageUrl: 'https://www.penthousepantherclub.com/fur_paisley_small.png', collection: "Bored Ape Yacht Club", name: "#1", tokenId: 1},
-    {imageUrl: 'https://www.penthousepantherclub.com/fur_paisley_small.png', collection: "Bored Ape Yacht Club", name: "#2", tokenId: 2},
-    {imageUrl: 'https://www.penthousepantherclub.com/fur_paisley_small.png', collection: "Bored Ape Yacht Club", name: "#3", tokenId: 3}
-  ];
+  const filteredData = !!filter ? data.filter(el => el.collection === filter) : data;
+
+  const searchData = filteredData.filter(el => {
+    const collectionLowerCase = el.collection?.toLowerCase();
+    const nameLowerCase = el.name?.toLowerCase();
+    const searchLowerCase = search?.toLowerCase();
+
+    const collectionFoundIndex = collectionLowerCase.search(searchLowerCase);
+    const nameFoundIndex = nameLowerCase.search(searchLowerCase);
+
+    if(collectionFoundIndex > -1 || nameFoundIndex > -1) {
+      return el;
+    }
+  });
 
   return (
     <Box as={SafeAreaView} backgroundColor={colors.neutral_50} pt='10px' height='100%'>
-      <TouchableOpacity onPress={() => openModal()}>
-        <Typography>Test open modal</Typography>
-      </TouchableOpacity>
       <FlatList
-        data={data}
+        data={!!search ? searchData : filteredData}
         renderItem={renderItem}
         showsVerticalScrollIndicator={true}
       />
-      <BottomModal
-        isVisible={isVisible}
-        height='250px'
-        closeModal={closeModal}
-      >
-        <TicketsFilter />
-      </BottomModal>
-
+      {filteredData?.length === 0 && <NoResults search={search}/>}
     </Box>
   )
 }
-
-export default TicketsScreen;

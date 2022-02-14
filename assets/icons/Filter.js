@@ -1,8 +1,8 @@
 import React from 'react';
 import Svg, { G, Line, Path } from 'react-native-svg';
-import { Box } from '../Box/Box';
+import { Box } from '../../frontend/Components/Box/Box';
 
-const Sort = () => {
+const Filter = () => {
   return (
     <Box>
       <Svg width="25" height="25" viewBox="0 0 25 25" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -14,4 +14,4 @@ const Sort = () => {
   )
 }
 
-export default Sort;
+export default Filter;

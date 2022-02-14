@@ -37,7 +37,6 @@ function Home(): JSX.Element {
               <FontAwesomeIcon icon={faTicketAlt} color={color} size={20} />
             );
           },
-          // headerShown: false,
         }}
         component={TicketsStackNavigator}
       />
@@ -95,29 +94,37 @@ function App(): JSX.Element {
   } = useMoralis();
 
   return (
-    <NavigationContainer>
-      <Stack.Navigator initialRouteName="SplashScreen">
-        <Stack.Screen
-          name="SplashScreen"
-          component={SplashScreen}
-          options={{headerShown: false}}
-        />
-        <Stack.Screen
-          name="Auth"
-          component={CryptoAuth}
-          options={{headerShown: false}}
-        />
-        {/* TODO: add area for modals, controllable by context */}
-        <Stack.Screen
-          name="DrawerNavigationRoutes"
-          component={Home}
-          options={{
-            headerTitle: props => <Header />,
-            headerShown: false,
-          }}
-        />
-      </Stack.Navigator>
-    </NavigationContainer>
+    <>
+      <NavigationContainer>
+        <Stack.Navigator initialRouteName="SplashScreen"
+          >
+          <Stack.Screen
+            name="SplashScreen"
+            component={SplashScreen}
+            options={{ headerShown: false }}
+          />
+          <Stack.Screen
+            name="Auth"
+            component={CryptoAuth}
+            options={{ headerShown: false }}
+          />
+          {/* TODO: add area for modals, controllable by context */}
+          <Stack.Screen
+            name="DrawerNavigationRoutes"
+            component={Home}
+            options={{
+              headerTitle: (props) => <Header />,
+              headerShown: false
+            }}
+          />
+        </Stack.Navigator>
+      </NavigationContainer>
+      <Toast
+        position='bottom'
+        bottomOffset={120}
+        config={toastConfig}
+      />
+    </>
   );
 }
 

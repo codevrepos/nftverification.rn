@@ -2,10 +2,40 @@ import React from 'react';
 import { Image, TouchableOpacity } from 'react-native';
 import { Box } from '../Box/Box';
 import colors from '../../theme/colors';
-import text from '../../theme/text.js';
+import text from '../../theme/text';
 import { Typography } from '../Typography/Typography';
+import Shimmer from '../Shimmer/Shimmer';
 
-const Ticket = (props) => {
+export const TicketLoading = (props) => {
+  return (
+    <Box
+      backgroundColor='white'
+      border='1px'
+      borderColor={colors.neutral_200}
+      borderRadius='8px'
+      mx='16px'
+      p='16px'
+      display='flex'
+      flexDirection='row'
+      mt='8px'
+    >
+      <Shimmer
+        height='76px'
+        width='76px'
+        borderRadius='8px'
+        overflow="hidden"
+        backgroundColor={colors.neutral_100}
+      />
+      <Box ml='16px' mt='10px'>
+        <Shimmer height='14px' width='160px' backgroundColor={colors.neutral_100} borderRadius='2px' />
+        <Shimmer height='14px' width='125px' backgroundColor={colors.neutral_100} borderRadius='2px' mt='8px' />
+        <Shimmer height='14px' width='175px' backgroundColor={colors.neutral_100} borderRadius='2px' mt='8px' />
+      </Box>
+    </Box>
+  )
+}
+
+export const Ticket = (props) => {
   const { collection, name, tokenId, imageUrl } = props;
 
   return (
@@ -30,7 +60,7 @@ const Ticket = (props) => {
       <Box
         height='76px'
         width='76px'
-        borderRadius='16px'
+        borderRadius='8px'
         overflow="hidden"
       >
         <Image
@@ -56,5 +86,3 @@ const Ticket = (props) => {
     </Box>
   )
 }
-
-export default Ticket;
