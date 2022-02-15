@@ -18,6 +18,7 @@ import { RenderQrcodeModalProps, WalletService } from "../types";
 import Qrcode from "./Qrcode";
 import WalletConnectLogo from "./WalletConnectLogo";
 import WalletServiceRow from "./WalletServiceRow";
+import Button from '../../Components/Buttons/Button';
 
 const styles = StyleSheet.create({
   absolute: { position: "absolute" },
@@ -104,10 +105,10 @@ export default function QrcodeModal({
     );
   }, [walletServices, division]);
 
-  const modalHeight = height * 0.4;
+  const modalHeight = height * 0.55;
   const modalWidth = modalHeight * 0.9;
   const modalListHeight = height * 0.3;
-  const modalListWidth = modalHeight * 0.8;
+  const modalListWidth = modalHeight * 0.75;
 
   const shouldAnimate = React.useCallback(
     (totalDuration: number, direction: boolean) => {
@@ -180,12 +181,15 @@ export default function QrcodeModal({
   return (
     <Modal
       animationType="slide"
-      transparent={true}
+      transparent={false}
       visible={visible}
-      // presentationStyle="formSheet"
-      //onRequestClose={() => onDismiss()}
+      presentationStyle="formSheet"
+      onRequestClose={() => onDismiss()}
     >
       <View style={[styles.flex, styles.center]}>
+        {/* <View style={{marginBottom: 25}}>
+          <WalletConnectLogo width={250} />
+        </View> */}
         <View
           style={[
             styles.modalView,
@@ -213,7 +217,6 @@ export default function QrcodeModal({
             }
             pointerEvents={visible ? "box-none" : "none"}>
             {/* backdrop */}
-
             <View
               style={[styles.center]}
               pointerEvents={visible ? "box-none" : "none"}>
@@ -238,9 +241,9 @@ export default function QrcodeModal({
                     renderItem={renderItem}
                   />
                 )}
-                <TouchableOpacity onPress={onPressLogo}>
+                {/* <TouchableOpacity onPress={onPressLogo}>
                   <WalletConnectLogo width={modalListWidth} />
-                </TouchableOpacity>
+                </TouchableOpacity> */}
               </Animated.View>
 
               {/* logo */}
@@ -267,11 +270,12 @@ export default function QrcodeModal({
             </View>
           </Animated.View>
         </View>
-        <Pressable
+        {/* <Pressable
           style={[styles.button, styles.buttonClose]}
           onPress={() => onDismiss()}>
-          <Text style={styles.textStyle}>Close </Text>
-        </Pressable>
+          <Text style={styles.textStyle}>Close</Text>
+        </Pressable> */}
+        <Button onPress={() => onDismiss()}>Close</Button>
       </View>
     </Modal>
   );
