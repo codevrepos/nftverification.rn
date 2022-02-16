@@ -77,18 +77,16 @@ const LoginScreen = () => {
     authenticate({ connector })
       .then(() => {
         if (authError) {
-          console.warn('authError');
+          Alert.alert(`authError: ${authError}`);
         } else {
           if (isAuthenticated) {
-            console.warn.apply('isAuthenticated');
+            Alert.alert(`isAuthenticated: ${isAuthenticated}`);
             navigation.replace("DrawerNavigationRoutes");
           }
         }
       })
       .catch(() => {});
   }
-
-
 
   return (
     <Box as={SafeAreaView} backgroundColor={colors.neutral_50} height='100%'>

@@ -89,7 +89,6 @@ function getHeaderTitle(route) {
 }
 
 function App(): JSX.Element {
-  const connector = useWalletConnect();
   const {
     authenticate,
     authError,
@@ -98,21 +97,6 @@ function App(): JSX.Element {
     logout,
     Moralis,
   } = useMoralis();
-
-  // useEffect(() => {
-  //   authenticate({ connector })
-  //     .then(() => {
-  //       if (authError) {
-  //         console.warn('authError');
-  //       } else {
-  //         if (isAuthenticated) {
-  //           console.warn.apply('isAuthenticated');
-  //           // navigation.replace("DrawerNavigationRoutes")?
-  //         }
-  //       }
-  //     })
-  //     .catch(() => {});
-  // }, [])
 
   return (
     <>
