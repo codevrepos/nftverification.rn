@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { useMoralis } from "react-moralis";
 import { useWalletConnect } from "./WalletConnect";
 import {
@@ -98,6 +98,21 @@ function App(): JSX.Element {
     logout,
     Moralis,
   } = useMoralis();
+
+  // useEffect(() => {
+  //   authenticate({ connector })
+  //     .then(() => {
+  //       if (authError) {
+  //         console.warn('authError');
+  //       } else {
+  //         if (isAuthenticated) {
+  //           console.warn.apply('isAuthenticated');
+  //           // navigation.replace("DrawerNavigationRoutes")?
+  //         }
+  //       }
+  //     })
+  //     .catch(() => {});
+  // }, [])
 
   return (
     <>

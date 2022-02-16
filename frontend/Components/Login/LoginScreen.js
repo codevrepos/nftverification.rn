@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { ActivityIndicator, Alert, Image, SafeAreaView, TouchableOpacity } from 'react-native';
 import { Typography } from '../Typography/Typography';
 import { Box } from '../Box/Box';
@@ -88,6 +88,8 @@ const LoginScreen = () => {
       .catch(() => {});
   }
 
+
+
   return (
     <Box as={SafeAreaView} backgroundColor={colors.neutral_50} height='100%'>
       <Typography mt='25px' textAlign='center'>LOGO PASS</Typography>
@@ -107,11 +109,13 @@ const LoginScreen = () => {
       </Box>
 
       <Box mt='36px' border={1} mx='36px' borderRadius='8px' borderColor={colors.neutral_200} overflow='hidden'>
-        <WalletButton
+        {/* <WalletButton
           icon={<MetaMask />}
           name='MetaMask'
           loading={false}
-          onPress={() => console.log('MetaMask')}
+          onPress={() => {
+            authenticate({ provider: "metamask" });
+          }}
         />
         <WalletButton
           icon={<GenerateIcon image={require('../../../assets/image/trustwallet.png')} />}
@@ -124,7 +128,7 @@ const LoginScreen = () => {
           name='Coinbase'
           loading={false}
           onPress={() => console.log('Coinbase')}
-        />
+        /> */}
         <WalletButton
           icon={null}
           name='Other wallets'

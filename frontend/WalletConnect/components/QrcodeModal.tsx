@@ -187,9 +187,6 @@ export default function QrcodeModal({
       onRequestClose={() => onDismiss()}
     >
       <View style={[styles.flex, styles.center]}>
-        {/* <View style={{marginBottom: 25}}>
-          <WalletConnectLogo width={250} />
-        </View> */}
         <View
           style={[
             styles.modalView,
@@ -197,26 +194,7 @@ export default function QrcodeModal({
             { width: modalWidth, height: modalHeight },
           ]}
           pointerEvents={visible ? "box-none" : "none"}>
-          {/* <View style={[styles.modalView, styles.noOverflow]}> */}
-          {/* <Text style={styles.modalText}>Hello World!</Text> */}
-          <Animated.View
-            style={
-              [
-                // styles.absolute,
-                // styles.noOverflow,
-                // {
-                //   width,
-                //   height,
-                //   opacity,
-                // },
-                // styles.border,
-                // styles.halfHeight,
-                // styles.center,
-                // styles.flex,
-              ]
-            }
-            pointerEvents={visible ? "box-none" : "none"}>
-            {/* backdrop */}
+          <Animated.View pointerEvents={visible ? "box-none" : "none"}>
             <View
               style={[styles.center]}
               pointerEvents={visible ? "box-none" : "none"}>

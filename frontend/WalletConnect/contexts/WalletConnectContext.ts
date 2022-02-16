@@ -7,7 +7,7 @@ const defaultValue: Partial<WalletConnectContextValue> = Object.freeze({
   clientMeta: {
     description: "Connect with WalletConnect",
     url: "https://walletconnect.org",
-    icons: ["https://walletconnect.org/walletconnect-logo.png"],
+    icons: ["https://www.logowik.com/content/uploads/images/google-logo-2020.jpg"],
     name: "WalletConnect",
   },
   storageOptions: {
