@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useContext} from 'react';
 import {useMoralis} from 'react-moralis';
 import {useWalletConnect} from './WalletConnect';
 import {
@@ -6,7 +6,7 @@ import {
   getFocusedRouteNameFromRoute,
 } from '@react-navigation/native';
 import {createStackNavigator} from '@react-navigation/stack';
-import {LogBox} from 'react-native';
+import {LogBox, TouchableOpacity} from 'react-native';
 
 import {createMaterialBottomTabNavigator} from '@react-navigation/material-bottom-tabs';
 import SplashScreen from './Components/SplashScreen';
@@ -21,10 +21,19 @@ import {FontAwesomeIcon} from '@fortawesome/react-native-fontawesome';
 import {faQrcode, faTicketAlt, faEdit} from '@fortawesome/free-solid-svg-icons';
 import Toast from 'react-native-toast-message';
 import {toastConfig} from './Components/Toast/ToastCustom';
+import ScannerModal from './Components/ScannerModal/ScannerModal';
+
+import {ModalContext} from './providers/ModalProvider';
+import {useNavigation} from '@react-navigation/core';
 
 LogBox.ignoreAllLogs();
 
 function Home(): JSX.Element {
+  const {isCameraTabModalOpen, setIsCameraTabModalOpen} = useContext(
+    ModalContext,
+  );
+  const navigation = useNavigation();
+
   return (
     <Tab.Navigator
       shifting={false}
@@ -49,6 +58,12 @@ function Home(): JSX.Element {
           tabBarIcon: ({color}) => (
             <FontAwesomeIcon icon={faQrcode} color={color} size={20} />
           ),
+        }}
+        listeners={{
+          tabPress: e => {
+            e.preventDefault();
+            setIsCameraTabModalOpen(true);
+          },
         }}
         component={Camera}
       />
@@ -84,7 +99,7 @@ function getHeaderTitle(route) {
   }
 }
 
-function App(): JSX.Element {
+function App(props): JSX.Element {
   const connector = useWalletConnect();
   const {
     authenticate,
@@ -94,6 +109,9 @@ function App(): JSX.Element {
     logout,
     Moralis,
   } = useMoralis();
+  const {isCameraTabModalOpen, setIsCameraTabModalOpen} = useContext(
+    ModalContext,
+  );
 
   return (
     <>
@@ -118,7 +136,18 @@ function App(): JSX.Element {
               headerShown: false,
             }}
           />
+          <Stack.Screen
+            name="Camera"
+            component={Camera}
+            options={{
+              headerShown: false,
+            }}
+          />
         </Stack.Navigator>
+        <ScannerModal
+          isCameraTabModalOpen={isCameraTabModalOpen}
+          setIsCameraTabModalOpen={setIsCameraTabModalOpen}
+        />
       </NavigationContainer>
       <Toast position="bottom" bottomOffset={120} config={toastConfig} />
     </>
