@@ -77,13 +77,14 @@ const LoginScreen = ({ navigation }) => {
   };
 
   // TODO: Re-add crypto login
-  // useEffect(() => {
-  //   isAuthenticated && navigation.replace("DrawerNavigationRoutes");
-  // }, [isAuthenticated]);
-
   useEffect(() => {
-    true && navigation.replace("DrawerNavigationRoutes");
-  }, []);
+    console.log(`isAuthenticated: ${isAuthenticated}`);
+    isAuthenticated && navigation.replace("DrawerNavigationRoutes");
+  }, [isAuthenticated]);
+
+  // useEffect(() => {
+  //   true && navigation.replace("DrawerNavigationRoutes");
+  // }, []);
 
   return (
     <Provider>
