@@ -41,7 +41,10 @@ export default function WalletServiceIcon({
     [walletService, size]
   );
   const onPress = React.useCallback(
-    () => connectToWalletService(walletService),
+    () => {
+      console.log(walletService);
+     return connectToWalletService(walletService);
+    },
     [connectToWalletService, walletService]
   );
   return (

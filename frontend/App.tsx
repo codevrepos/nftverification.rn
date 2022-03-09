@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { useMoralis } from "react-moralis";
 import { useWalletConnect } from "./WalletConnect";
 import {
@@ -10,12 +10,12 @@ import { LogBox } from "react-native";
 
 import { createMaterialBottomTabNavigator } from "@react-navigation/material-bottom-tabs";
 import SplashScreen from "./Components/SplashScreen";
-import CryptoAuth from "./Components/CryptoAuth";
 import { Header } from "./Components/Header/Header";
 
 import TicketsStackNavigator from './Components/Tickets/TicketsStackNavigator';
 import Camera from './Components/Camera/Camera';
 import Settings from './Components/Settings/Settings';
+import LoginScreen from './Components/Login/LoginScreen';
 
 import { FontAwesomeIcon } from "@fortawesome/react-native-fontawesome";
 import {
@@ -89,7 +89,6 @@ function getHeaderTitle(route) {
 }
 
 function App(): JSX.Element {
-  const connector = useWalletConnect();
   const {
     authenticate,
     authError,
@@ -111,7 +110,7 @@ function App(): JSX.Element {
           />
           <Stack.Screen
             name="Auth"
-            component={CryptoAuth}
+            component={LoginScreen}
             options={{ headerShown: false }}
           />
           {/* TODO: add area for modals, controllable by context */}

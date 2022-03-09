@@ -22,8 +22,14 @@ export default function useMobileRegistry(): State {
       try {
         const result = await fetch("https://registry.walletconnect.org/data/wallets.json");
         const data = await result.json();
+        const arrayData = Object.values(data) as readonly WalletService[];
+
+        // TODO: Modify filter if needed
+        // const filteredData = arrayData.filter(el => el.name !== 'MetaMask' && el.name !== 'Trust Wallet');
+        const filteredData = arrayData;
+
         setState({
-          data: Object.values(data) as readonly WalletService[],
+          data: filteredData,
           error: undefined,
           loading: false,
         });
